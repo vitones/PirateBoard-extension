@@ -39,7 +39,7 @@ function row(dl, label, value) {
 function render(parts) {
   snapshot = PBParse.buildSnapshot(parts);
   gamertag = parts.header ? parts.header.gamertag : null;
-  $('who').textContent = gamertag || '';
+  $('who').textContent = gamertag ? gamertag + (parts.header.title ? ' · ' + parts.header.title : '') : '';
   document.querySelectorAll('#steps li').forEach(function (li) {
     li.classList.toggle('done', !!parts[li.getAttribute('data-key')]);
   });
@@ -49,7 +49,8 @@ function render(parts) {
   if (snapshot) {
     var stats = $('stats');
     stats.textContent = '';
-    [[T('Nível'), snapshot.level], [T('Ouro'), snapshot.gold], ['Metas de Pirata', snapshot.pirateGoals], [T('Metas de Navio'), snapshot.shipGoals]]
+    [[T('Moedas Antigas'), snapshot.ancientCoins], [T('Ouro'), snapshot.gold], ['Metas de Pirata', snapshot.pirateGoals], [T('Metas de Navio'), snapshot.shipGoals]]
+      .concat(snapshot.renown != null ? [[T('Renome'), snapshot.renown]] : [])
       .forEach(function (s) {
         var d = document.createElement('div'); d.className = 'stat';
         var b = document.createElement('b'); b.textContent = fmt(s[1]);
@@ -67,7 +68,31 @@ function render(parts) {
     $('companies-label').textContent = T('Reputação em ') + snapshot.reputation.length + T(' companhias');
     $('preview').textContent = JSON.stringify(snapshot, null, 2);
   }
+  renderChest(parts);
   syncToken();
+}
+
+var CHEST_LABEL = {
+  arsenal: 'Arsenal', clothing: 'Roupas', equipment: 'Equipamento', pets: 'Mascotes',
+  ship_customization: 'Personalização de Navio', ship_decoration: 'Decoração de Navio',
+  ship_trinkets: 'Bugigangas de Navio', ornamental: 'Ornamental',
+};
+
+// Baú: mostra o que ja foi lido e o que falta abrir (primeira e ultima pagina de cada categoria, filtro Tudo).
+function renderChest(parts) {
+  var dl = $('chest-list');
+  dl.textContent = '';
+  var any = false, done = 0;
+  PBParse.CHEST_KEYS.forEach(function (k) {
+    var c = parts.chest && parts.chest[k];
+    if (!c) return;
+    any = true;
+    var total = PBParse.chestTotal(c);
+    if (total !== null) done++;
+    row(dl, T(CHEST_LABEL[k]), total !== null ? total + ' ' + T('itens') : T('abra a primeira e a última página (filtro Tudo)'));
+  });
+  $('chest-label').textContent = T('Baú') + (any ? ': ' + done + ' ' + T('categorias completas') : ' ' + T('(opcional: abra as categorias)'));
+  $('chest-label').parentElement.hidden = !parts.chest && !snapshot;
 }
 
 var hasToken = false;

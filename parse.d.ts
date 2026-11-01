@@ -1,4 +1,12 @@
 export function parseHeader(text: string): { gamertag: string; level: number; gold: number; goldIndex: number } | null;
+export function parseCoinTitle(s: string | null | undefined): number | null;
+export function parseRenown(s: string | null | undefined): number | null;
+export function cleanTitle(s: string | null | undefined): string | null;
+export function chestCategory(label: string): string | null;
+export function addChestPage(chest: unknown, reading: { category: string | null; sub: string | null; page: number; isLast: boolean; count: number }): Record<string, unknown> | null;
+export function chestCounts(chest: unknown): Record<string, number>;
+export function chestTotal(c: unknown): number | null;
+export const CHEST_KEYS: string[];
 export function parseCaptaincy(text: string): { pirateGoals: number; shipGoals: number } | null;
 export function parseReputation(text: string): { company: string; level: number }[];
 export function buildSnapshot(parts: unknown): Record<string, unknown> | null;
