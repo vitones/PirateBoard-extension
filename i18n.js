@@ -138,7 +138,13 @@
  "Todo o mundo": "Todo el mundo",
  "Ranking de comunidade dos jogadores de Sea of Thieves do mundo todo.": "Ranking comunitario de los jugadores de Sea of Thieves de todo el mundo.",
  "Escolha o país": "Elige el país",
- "Mapa-múndi: escolha um país": "Mapamundi: elige un país"
+ "Mapa-múndi: escolha um país": "Mapamundi: elige un país",
+ "Comparar": "Comparar",
+ "Comparar jogadores": "Comparar jugadores",
+ "Comparar jogadores | PirateBoard": "Comparar jugadores | PirateBoard",
+ "Compare lado a lado dois jogadores do PirateBoard.": "Compara lado a lado a dos jugadores de PirateBoard.",
+ "Primeira gamertag": "Primera gamertag",
+ "Segunda gamertag": "Segunda gamertag"
  },
  "en": {
  "Código aberto para conferir": "Open source to verify",
@@ -277,7 +283,13 @@
  "Todo o mundo": "Worldwide",
  "Ranking de comunidade dos jogadores de Sea of Thieves do mundo todo.": "Community leaderboard for Sea of Thieves players around the world.",
  "Escolha o país": "Choose your country",
- "Mapa-múndi: escolha um país": "World map: choose a country"
+ "Mapa-múndi: escolha um país": "World map: choose a country",
+ "Comparar": "Compare",
+ "Comparar jogadores": "Compare players",
+ "Comparar jogadores | PirateBoard": "Compare players | PirateBoard",
+ "Compare lado a lado dois jogadores do PirateBoard.": "Compare two PirateBoard players side by side.",
+ "Primeira gamertag": "First gamertag",
+ "Segunda gamertag": "Second gamertag"
  },
  "fr": {
  "Código aberto para conferir": "Code source ouvert, à vérifier",
@@ -416,7 +428,13 @@
  "Todo o mundo": "Monde entier",
  "Ranking de comunidade dos jogadores de Sea of Thieves do mundo todo.": "Classement communautaire des joueurs de Sea of Thieves du monde entier.",
  "Escolha o país": "Choisissez votre pays",
- "Mapa-múndi: escolha um país": "Planisphère : choisissez un pays"
+ "Mapa-múndi: escolha um país": "Planisphère : choisissez un pays",
+ "Comparar": "Comparer",
+ "Comparar jogadores": "Comparer des joueurs",
+ "Comparar jogadores | PirateBoard": "Comparer des joueurs | PirateBoard",
+ "Compare lado a lado dois jogadores do PirateBoard.": "Comparez deux joueurs de PirateBoard côte à côte.",
+ "Primeira gamertag": "Premier gamertag",
+ "Segunda gamertag": "Deuxième gamertag"
  },
  "it": {
  "Código aberto para conferir": "Codice aperto da verificare",
@@ -555,7 +573,13 @@
  "Todo o mundo": "Tutto il mondo",
  "Ranking de comunidade dos jogadores de Sea of Thieves do mundo todo.": "Classifica della community dei giocatori di Sea of Thieves di tutto il mondo.",
  "Escolha o país": "Scegli il paese",
- "Mapa-múndi: escolha um país": "Mappamondo: scegli un paese"
+ "Mapa-múndi: escolha um país": "Mappamondo: scegli un paese",
+ "Comparar": "Confronta",
+ "Comparar jogadores": "Confronta giocatori",
+ "Comparar jogadores | PirateBoard": "Confronta giocatori | PirateBoard",
+ "Compare lado a lado dois jogadores do PirateBoard.": "Confronta due giocatori di PirateBoard fianco a fianco.",
+ "Primeira gamertag": "Prima gamertag",
+ "Segunda gamertag": "Seconda gamertag"
  }
  };
   var LOCALES = { pt: 'pt-BR', es: 'es', en: 'en', fr: 'fr', it: 'it' };
