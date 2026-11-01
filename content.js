@@ -9,9 +9,21 @@
   var timer = null;
   var current = null;
 
+  var COMPANY_PATHS = {
+    GoldHoarders: 'gold_hoarders', MerchantAlliance: 'merchant_alliance', OrderOfSouls: 'order_of_souls',
+    AthenasFortune: 'athenas_fortune', ReapersBones: 'reapers_bones',
+  };
+  var FACTION_PATHS = { PirateLord: 'guardians_of_fortune', Flameheart: 'servants_of_the_flame' };
+  function lastSegment(path) { var m = /\/profile\/reputation\/([A-Za-z]+)\/?$/.exec(path); return m ? m[1] : null; }
+  function companyOf(path) { var s = lastSegment(path); return s && COMPANY_PATHS[s] ? COMPANY_PATHS[s] : null; }
+
   function kindOf(path) {
-    if (/\/profile\/captaincy/.test(path)) return 'captaincy';
-    if (/\/profile\/reputation/.test(path)) return 'reputation';
+    if (/\/profile\/captaincy\/?$/.test(path)) return 'captaincy';
+    if (/\/profile\/captaincy\/milestones\/?$/.test(path)) return 'milestones'; // so a lista; os detalhes de cada meta nao sao lidos
+    if (/\/profile\/reputation\/?$/.test(path)) return 'reputation';
+    if (/\/profile\/reputation\/(PirateLord|Flameheart)\/?$/.test(path)) return 'faction';
+    if (/\/profile\/reputation\/CreatorCrew\/?$/.test(path)) return 'creator';
+    if (companyOf(path)) return 'company';
     if (/\/profile\/overview/.test(path)) return 'overview';
     if (/\/profile\/seasons/.test(path)) return 'seasons';
     if (/\/profile\/your-chest/.test(path)) return 'chest';
@@ -33,6 +45,10 @@
       parts.header = header;
       if (kind === 'captaincy') parts.captaincy = value;
       if (kind === 'reputation') parts.reputation = value;
+      if (kind === 'milestones') parts.milestones = value;
+      if (kind === 'creator') parts.creator = value;
+      if (kind === 'faction') (parts.factions = parts.factions || {})[FACTION_PATHS[lastSegment(location.pathname)]] = value;
+      if (kind === 'company') (parts.commendations = parts.commendations || {})[companyOf(location.pathname)] = value;
       if (kind === 'seasons') parts.seasons = { renown: value };
       parts.readAt = Date.now();
       chrome.storage.local.set({ parts: parts });
@@ -71,6 +87,10 @@
       if (kind === 'chest') value = true;
       else if (kind === 'seasons') value = PBParse.parseRenown(textOf('.profiles-seasons-track__renown-meter__level-text'));
       else if (kind === 'captaincy') value = PBParse.parseCaptaincy(text);
+      else if (kind === 'milestones') value = PBParse.parseMilestones(text);
+      else if (kind === 'faction') value = PBParse.parseFaction(text);
+      else if (kind === 'creator') value = PBParse.parseCreator(text);
+      else if (kind === 'company') value = PBParse.parseCommendations(text);
       else if (kind === 'reputation') {
         var rep = PBParse.parseReputation(text);
         value = rep.length ? rep : null;
