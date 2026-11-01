@@ -156,7 +156,11 @@
  "Informe a gamertag e o código de edição.": "Indica la gamertag y el código de edición.",
  "Incluir digitados à mão": "Incluir escritos a mano",
  "Digitado à mão (não verificado)": "Escrito a mano (no verificado)",
- " para quem prefere não instalar a extensão (os números ficam marcados como não verificados).": " para quien prefiere no instalar la extensión (los números quedan marcados como no verificados)."
+ " para quem prefere não instalar a extensão (os números ficam marcados como não verificados).": " para quien prefiere no instalar la extensión (los números quedan marcados como no verificados).",
+ "jogadores": "jugadores",
+ "países": "países",
+ "Entrar no ranking": "Entrar al ranking",
+ "Quer aparecer aqui? Instale a extensão e envie o seu perfil.": "¿Quieres aparecer aquí? Instala la extensión y envía tu perfil."
  },
  "en": {
  "Código aberto para conferir": "Open source to verify",
@@ -313,7 +317,11 @@
  "Informe a gamertag e o código de edição.": "Enter the gamertag and the edit code.",
  "Incluir digitados à mão": "Include hand-typed",
  "Digitado à mão (não verificado)": "Typed by hand (unverified)",
- " para quem prefere não instalar a extensão (os números ficam marcados como não verificados).": " for those who prefer not to install the extension (the numbers are marked as unverified)."
+ " para quem prefere não instalar a extensão (os números ficam marcados como não verificados).": " for those who prefer not to install the extension (the numbers are marked as unverified).",
+ "jogadores": "players",
+ "países": "countries",
+ "Entrar no ranking": "Join the leaderboard",
+ "Quer aparecer aqui? Instale a extensão e envie o seu perfil.": "Want to show up here? Install the extension and send your profile."
  },
  "fr": {
  "Código aberto para conferir": "Code source ouvert, à vérifier",
@@ -470,7 +478,11 @@
  "Informe a gamertag e o código de edição.": "Indiquez le gamertag et le code de modification.",
  "Incluir digitados à mão": "Inclure les saisies manuelles",
  "Digitado à mão (não verificado)": "Saisi à la main (non vérifié)",
- " para quem prefere não instalar a extensão (os números ficam marcados como não verificados).": " pour ceux qui préfèrent ne pas installer l'extension (les chiffres sont marqués comme non vérifiés)."
+ " para quem prefere não instalar a extensão (os números ficam marcados como não verificados).": " pour ceux qui préfèrent ne pas installer l'extension (les chiffres sont marqués comme non vérifiés).",
+ "jogadores": "joueurs",
+ "países": "pays",
+ "Entrar no ranking": "Rejoindre le classement",
+ "Quer aparecer aqui? Instale a extensão e envie o seu perfil.": "Envie d'apparaître ici ? Installez l'extension et envoyez votre profil."
  },
  "it": {
  "Código aberto para conferir": "Codice aperto da verificare",
@@ -627,7 +639,11 @@
  "Informe a gamertag e o código de edição.": "Indica la gamertag e il codice di modifica.",
  "Incluir digitados à mão": "Includi i digitati a mano",
  "Digitado à mão (não verificado)": "Digitato a mano (non verificato)",
- " para quem prefere não instalar a extensão (os números ficam marcados como não verificados).": " per chi preferisce non installare l'estensione (i numeri vengono contrassegnati come non verificati)."
+ " para quem prefere não instalar a extensão (os números ficam marcados como não verificados).": " per chi preferisce non installare l'estensione (i numeri vengono contrassegnati come non verificati).",
+ "jogadores": "giocatori",
+ "países": "paesi",
+ "Entrar no ranking": "Entra in classifica",
+ "Quer aparecer aqui? Instale a extensão e envie o seu perfil.": "Vuoi comparire qui? Installa l'estensione e invia il tuo profilo."
  }
  };
   var LOCALES = { pt: 'pt-BR', es: 'es', en: 'en', fr: 'fr', it: 'it' };
