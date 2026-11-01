@@ -197,7 +197,7 @@
     if (!parts || !parts.header || !parts.captaincy || !parts.reputation || !parts.reputation.length) return null;
     var snap = {
       version: 1,
-      ancientCoins: parts.header.level, // Moedas Antigas
+      ancientCoins: parts.header.level, // Moedas Anciãs
       gold: parts.header.gold,
       pirateGoals: parts.captaincy.pirateGoals,
       shipGoals: parts.captaincy.shipGoals,

@@ -23,7 +23,7 @@
     chrome.storage.local.get('parts', function (res) {
       var parts = res.parts || {};
       // Outra conta: descarta o que foi lido antes. Valores exatos (title) valem como vieram:
-      // Moedas Antigas e ouro tambem diminuem. Sem eles, o texto visivel e animado e pode vir
+      // Moedas Anciãs e ouro tambem diminuem. Sem eles, o texto visivel e animado e pode vir
       // parcial, entao vale o maior dos valores lidos.
       if (parts.header && parts.header.gamertag !== header.gamertag) parts = {};
       if (parts.header && !header.exact) {

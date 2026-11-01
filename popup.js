@@ -49,7 +49,7 @@ function render(parts) {
   if (snapshot) {
     var stats = $('stats');
     stats.textContent = '';
-    [[T('Moedas Antigas'), snapshot.ancientCoins], [T('Ouro'), snapshot.gold], ['Metas de Pirata', snapshot.pirateGoals], [T('Metas de Navio'), snapshot.shipGoals]]
+    [[T('Moedas Anciãs'), snapshot.ancientCoins], [T('Ouro'), snapshot.gold], ['Metas de Pirata', snapshot.pirateGoals], [T('Metas de Navio'), snapshot.shipGoals]]
       .concat(snapshot.renown != null ? [[T('Renome'), snapshot.renown]] : [])
       .forEach(function (s) {
         var d = document.createElement('div'); d.className = 'stat';
