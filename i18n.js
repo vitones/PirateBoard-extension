@@ -144,7 +144,19 @@
  "Comparar jogadores | PirateBoard": "Comparar jugadores | PirateBoard",
  "Compare lado a lado dois jogadores do PirateBoard.": "Compara lado a lado a dos jugadores de PirateBoard.",
  "Primeira gamertag": "Primera gamertag",
- "Segunda gamertag": "Segunda gamertag"
+ "Segunda gamertag": "Segunda gamertag",
+ "Cadastro manual": "Registro manual",
+ "Cadastro manual | PirateBoard": "Registro manual | PirateBoard",
+ "Cadastre os números do seu perfil sem instalar a extensão. Ficam marcados como não verificados.": "Registra los números de tu perfil sin instalar la extensión. Quedan marcados como no verificados.",
+ "Prefere não instalar a extensão? Digite os números do seu perfil. Eles ficam marcados como “digitado à mão, não verificado” e só entram no ranking para quem marcar “Incluir digitados à mão”. Ninguém confere os valores: com a extensão, eles vêm direto do site do jogo.": "¿Prefieres no instalar la extensión? Escribe los números de tu perfil. Quedan marcados como “escrito a mano, no verificado” y solo entran en el ranking para quien marque “Incluir escritos a mano”. Nadie comprueba los valores: con la extensión vienen directo del sitio del juego.",
+ "Reputação por companhia (opcional)": "Reputación por compañía (opcional)",
+ "Código de edição (só se você já tem perfil)": "Código de edición (solo si ya tienes perfil)",
+ "Salvar": "Guardar",
+ "Perfil salvo. Guarde este código de edição; ele não será mostrado de novo: ": "Perfil guardado. Guarda este código de edición; no se mostrará de nuevo: ",
+ "Informe a gamertag e o código de edição.": "Indica la gamertag y el código de edición.",
+ "Incluir digitados à mão": "Incluir escritos a mano",
+ "Digitado à mão (não verificado)": "Escrito a mano (no verificado)",
+ " para quem prefere não instalar a extensão (os números ficam marcados como não verificados).": " para quien prefiere no instalar la extensión (los números quedan marcados como no verificados)."
  },
  "en": {
  "Código aberto para conferir": "Open source to verify",
@@ -289,7 +301,19 @@
  "Comparar jogadores | PirateBoard": "Compare players | PirateBoard",
  "Compare lado a lado dois jogadores do PirateBoard.": "Compare two PirateBoard players side by side.",
  "Primeira gamertag": "First gamertag",
- "Segunda gamertag": "Second gamertag"
+ "Segunda gamertag": "Second gamertag",
+ "Cadastro manual": "Manual entry",
+ "Cadastro manual | PirateBoard": "Manual entry | PirateBoard",
+ "Cadastre os números do seu perfil sem instalar a extensão. Ficam marcados como não verificados.": "Enter your profile numbers without installing the extension. They are marked as unverified.",
+ "Prefere não instalar a extensão? Digite os números do seu perfil. Eles ficam marcados como “digitado à mão, não verificado” e só entram no ranking para quem marcar “Incluir digitados à mão”. Ninguém confere os valores: com a extensão, eles vêm direto do site do jogo.": "Prefer not to install the extension? Type in your profile numbers. They are marked “typed by hand, unverified” and only appear on the leaderboard for people who tick “Include hand-typed”. Nobody checks the values: with the extension they come straight from the game's website.",
+ "Reputação por companhia (opcional)": "Reputation per company (optional)",
+ "Código de edição (só se você já tem perfil)": "Edit code (only if you already have a profile)",
+ "Salvar": "Save",
+ "Perfil salvo. Guarde este código de edição; ele não será mostrado de novo: ": "Profile saved. Keep this edit code; it will not be shown again: ",
+ "Informe a gamertag e o código de edição.": "Enter the gamertag and the edit code.",
+ "Incluir digitados à mão": "Include hand-typed",
+ "Digitado à mão (não verificado)": "Typed by hand (unverified)",
+ " para quem prefere não instalar a extensão (os números ficam marcados como não verificados).": " for those who prefer not to install the extension (the numbers are marked as unverified)."
  },
  "fr": {
  "Código aberto para conferir": "Code source ouvert, à vérifier",
@@ -434,7 +458,19 @@
  "Comparar jogadores | PirateBoard": "Comparer des joueurs | PirateBoard",
  "Compare lado a lado dois jogadores do PirateBoard.": "Comparez deux joueurs de PirateBoard côte à côte.",
  "Primeira gamertag": "Premier gamertag",
- "Segunda gamertag": "Deuxième gamertag"
+ "Segunda gamertag": "Deuxième gamertag",
+ "Cadastro manual": "Saisie manuelle",
+ "Cadastro manual | PirateBoard": "Saisie manuelle | PirateBoard",
+ "Cadastre os números do seu perfil sem instalar a extensão. Ficam marcados como não verificados.": "Saisissez les chiffres de votre profil sans installer l'extension. Ils sont marqués comme non vérifiés.",
+ "Prefere não instalar a extensão? Digite os números do seu perfil. Eles ficam marcados como “digitado à mão, não verificado” e só entram no ranking para quem marcar “Incluir digitados à mão”. Ninguém confere os valores: com a extensão, eles vêm direto do site do jogo.": "Vous préférez ne pas installer l'extension ? Saisissez les chiffres de votre profil. Ils sont marqués « saisi à la main, non vérifié » et n'apparaissent au classement que pour ceux qui cochent « Inclure les saisies manuelles ». Personne ne vérifie les valeurs : avec l'extension, elles viennent directement du site du jeu.",
+ "Reputação por companhia (opcional)": "Réputation par compagnie (facultatif)",
+ "Código de edição (só se você já tem perfil)": "Code de modification (seulement si vous avez déjà un profil)",
+ "Salvar": "Enregistrer",
+ "Perfil salvo. Guarde este código de edição; ele não será mostrado de novo: ": "Profil enregistré. Conservez ce code de modification ; il ne sera plus affiché : ",
+ "Informe a gamertag e o código de edição.": "Indiquez le gamertag et le code de modification.",
+ "Incluir digitados à mão": "Inclure les saisies manuelles",
+ "Digitado à mão (não verificado)": "Saisi à la main (non vérifié)",
+ " para quem prefere não instalar a extensão (os números ficam marcados como não verificados).": " pour ceux qui préfèrent ne pas installer l'extension (les chiffres sont marqués comme non vérifiés)."
  },
  "it": {
  "Código aberto para conferir": "Codice aperto da verificare",
@@ -579,7 +615,19 @@
  "Comparar jogadores | PirateBoard": "Confronta giocatori | PirateBoard",
  "Compare lado a lado dois jogadores do PirateBoard.": "Confronta due giocatori di PirateBoard fianco a fianco.",
  "Primeira gamertag": "Prima gamertag",
- "Segunda gamertag": "Seconda gamertag"
+ "Segunda gamertag": "Seconda gamertag",
+ "Cadastro manual": "Inserimento manuale",
+ "Cadastro manual | PirateBoard": "Inserimento manuale | PirateBoard",
+ "Cadastre os números do seu perfil sem instalar a extensão. Ficam marcados como não verificados.": "Inserisci i numeri del tuo profilo senza installare l'estensione. Vengono contrassegnati come non verificati.",
+ "Prefere não instalar a extensão? Digite os números do seu perfil. Eles ficam marcados como “digitado à mão, não verificado” e só entram no ranking para quem marcar “Incluir digitados à mão”. Ninguém confere os valores: com a extensão, eles vêm direto do site do jogo.": "Preferisci non installare l'estensione? Digita i numeri del tuo profilo. Vengono contrassegnati come “digitato a mano, non verificato” e compaiono in classifica solo per chi spunta “Includi i digitati a mano”. Nessuno controlla i valori: con l'estensione arrivano direttamente dal sito del gioco.",
+ "Reputação por companhia (opcional)": "Reputazione per compagnia (facoltativo)",
+ "Código de edição (só se você já tem perfil)": "Codice di modifica (solo se hai già un profilo)",
+ "Salvar": "Salva",
+ "Perfil salvo. Guarde este código de edição; ele não será mostrado de novo: ": "Profilo salvato. Conserva questo codice di modifica; non verrà mostrato di nuovo: ",
+ "Informe a gamertag e o código de edição.": "Indica la gamertag e il codice di modifica.",
+ "Incluir digitados à mão": "Includi i digitati a mano",
+ "Digitado à mão (não verificado)": "Digitato a mano (non verificato)",
+ " para quem prefere não instalar a extensão (os números ficam marcados como não verificados).": " per chi preferisce non installare l'estensione (i numeri vengono contrassegnati come non verificati)."
  }
  };
   var LOCALES = { pt: 'pt-BR', es: 'es', en: 'en', fr: 'fr', it: 'it' };
