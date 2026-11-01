@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>PirateBoard</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <h1>PirateBoard</h1>
+    <span id="who"></span>
+  </header>
+
+  <ul id="steps" class="steps">
+    <li data-key="header"><a data-url="https://www.seaofthieves.com/pt-br/profile/overview" href="#">Visão geral</a></li>
+    <li data-key="captaincy"><a data-url="https://www.seaofthieves.com/pt-br/profile/captaincy" href="#">Capitania</a></li>
+    <li data-key="reputation"><a data-url="https://www.seaofthieves.com/pt-br/profile/reputation" href="#">Reputação</a></li>
+  </ul>
+  <p id="hint" class="muted">Abra cada página do seu perfil no site do jogo e espere carregar. Toque em uma para abrir.</p>
+
+  <main id="review" hidden>
+    <div id="stats" class="stats"></div>
+    <details>
+      <summary id="companies-label"></summary>
+      <dl id="companies" class="list"></dl>
+    </details>
+    <details>
+      <summary>Dados exatos enviados</summary>
+      <pre id="preview"></pre>
+    </details>
+
+    <select id="country" aria-label="País">
+      <option value="BR">Brasil</option><option value="AR">Argentina</option><option value="CL">Chile</option>
+      <option value="CO">Colômbia</option><option value="PE">Peru</option><option value="UY">Uruguai</option>
+      <option value="PY">Paraguai</option><option value="BO">Bolívia</option><option value="EC">Equador</option>
+      <option value="VE">Venezuela</option><option value="GY">Guiana</option><option value="SR">Suriname</option>
+    </select>
+    <input type="text" id="invite" placeholder="Código de convite (XXXX-XXXX-XXXX)" autocomplete="off" spellcheck="false" aria-label="Código de convite" hidden>
+    <label><input type="checkbox" id="pub"> Aparecer no ranking público</label>
+    <label><input type="checkbox" id="terms"> Aceito os termos e a política de privacidade</label>
+    <button id="send" disabled>Enviar</button>
+  </main>
+
+  <section id="invites" hidden>
+    <button id="mkinvite" class="secondary">Gerar convite</button>
+    <p id="invite-out" class="muted" hidden></p>
+    <button id="delete" class="link">Excluir meus dados</button>
+  </section>
+
+  <p id="status" role="status"></p>
+  <footer>
+    <button id="clear" class="link">Limpar leitura</button>
+    <span>Não afiliado à Rare nem à Microsoft. Nenhum cookie ou senha é lido.</span>
+  </footer>
+  <script src="i18n.js"></script>
+  <script src="parse.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
