@@ -193,6 +193,89 @@
     return out;
   }
 
+  // Metas de Pirata por categoria (pagina /profile/captaincy/milestones): nome da categoria, depois o numero.
+  var MILESTONES = [
+    ['garimpeiro', 'Garimpeiro'], ['viajante', 'Viajante'], ['emissario', 'Emissário'], ['cacador', 'Caçador'], ['temido', 'Temido'],
+    ['rebelde', 'Rebelde'], ['desaventurado', 'Desaventurado'], ['guardiao', 'Guardião'], ['servo', 'Servo'], ['capitao', 'Capitão'],
+  ];
+  function parseMilestones(text) {
+    var l = lines(text);
+    var out = {};
+    var n = 0;
+    MILESTONES.forEach(function (m) {
+      for (var i = 0; i < l.length - 1; i++) {
+        if (l[i] === m[1]) {
+          var v = toInt(l[i + 1]);
+          if (v !== null && v <= 20000) { out[m[0]] = v; n++; break; }
+        }
+      }
+    });
+    return n === MILESTONES.length ? out : null;
+  }
+
+  // Facoes (Guardioes da Fortuna e Servicais da Chama): rotulo e, na linha seguinte, o numero.
+  var FACTION_LABELS = [
+    ['shipsSunk', /^Total de Navios da Facção Rival Afundados$/i, 1000000],
+    ['streak', /^Maior Sequência de Facção$/i, 10000],
+    ['hourglass', /^Maior valor de Ampulheta Única recebido$/i, 50000000],
+  ];
+  function parseFaction(text) {
+    var l = lines(text);
+    var out = {};
+    var n = 0;
+    FACTION_LABELS.forEach(function (f) {
+      for (var i = 0; i < l.length - 1; i++) {
+        if (f[1].test(l[i])) {
+          var v = toInt(l[i + 1]);
+          if (v !== null && v <= f[2]) { out[f[0]] = v; n++; }
+          break;
+        }
+      }
+    });
+    return n === FACTION_LABELS.length ? out : null;
+  }
+
+  // Tripulacao de Criadores: nome da condecoracao, depois "atual/meta" (so o atual interessa).
+  var CREATOR = [['streamHours', 'Contista'], ['watchHours', 'Buscador de Contos'], ['viewers', 'Contador de Histórias Piratas']];
+  function parseCreator(text) {
+    var l = lines(text);
+    var out = {};
+    var n = 0;
+    CREATOR.forEach(function (c) {
+      for (var i = 0; i < l.length - 1; i++) {
+        if (l[i] === c[1]) {
+          var m = /^(\d[\d.,]*)\/\d[\d.,]*$/.exec(l[i + 1]);
+          var v = m ? toInt(m[1]) : null;
+          if (v !== null && v <= 100000) { out[c[0]] = v; n++; }
+          break;
+        }
+      }
+    });
+    return n === CREATOR.length ? out : null;
+  }
+
+  // Condecoracoes de uma companhia: depois do filtro "Tudo", cada item tem "atual/meta".
+  // Guarda so quantas estao completas, quantas existem e o progresso somado (cada item vale ate 1).
+  function parseCommendations(text) {
+    var l = lines(text);
+    var start = -1;
+    for (var i = 0; i < l.length - 1; i++) {
+      if (l[i] === 'Tudo' && /^Completo/.test(l[i + 1])) { start = i + 2; break; }
+    }
+    if (start < 0) return null;
+    var done = 0, total = 0, progress = 0;
+    for (var j = start; j < l.length && l[j] !== 'VOLTAR'; j++) {
+      var m = /^(\d{1,7})\/(\d{1,7})$/.exec(l[j]);
+      if (!m) continue;
+      var a = Number(m[1]), b = Number(m[2]);
+      if (b < 1) continue;
+      total++;
+      if (a >= b) done++;
+      progress += Math.min(a, b) / b;
+    }
+    return total > 0 && total <= 500 ? { done: done, total: total, progress: Math.round(progress * 10) / 10 } : null;
+  }
+
   function buildSnapshot(parts) {
     if (!parts || !parts.header || !parts.captaincy || !parts.reputation || !parts.reputation.length) return null;
     var snap = {
@@ -207,12 +290,22 @@
     if (parts.seasons && typeof parts.seasons.renown === 'number') snap.renown = parts.seasons.renown;
     var chest = chestCounts(parts.chest);
     if (Object.keys(chest).length) snap.chest = chest;
+    var extras = {};
+    if (parts.milestones) extras.milestones = parts.milestones;
+    if (parts.factions && Object.keys(parts.factions).length) extras.factions = parts.factions;
+    if (parts.creator) extras.creator = parts.creator;
+    if (parts.commendations && Object.keys(parts.commendations).length) extras.commendations = parts.commendations;
+    if (Object.keys(extras).length) snap.extras = extras;
     return snap;
   }
 
   var api = {
     parseHeader: parseHeader,
     parseCoinTitle: parseCoinTitle,
+    parseMilestones: parseMilestones,
+    parseFaction: parseFaction,
+    parseCreator: parseCreator,
+    parseCommendations: parseCommendations,
     parseRenown: parseRenown,
     cleanTitle: cleanTitle,
     chestCategory: chestCategory,
