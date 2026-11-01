@@ -229,7 +229,11 @@
  "Disponível para perfis verificados.": "Disponible para perfiles verificados.",
  "Tendência do ouro": "Tendencia del oro",
  "Widget OBS | PirateBoard": "Widget OBS | PirateBoard",
- "Widget para OBS com os números de um perfil verificado do PirateBoard.": "Widget para OBS con los números de un perfil verificado de PirateBoard."
+ "Widget para OBS com os números de um perfil verificado do PirateBoard.": "Widget para OBS con los números de un perfil verificado de PirateBoard.",
+ "O que o seu perfil mostra": "Qué muestra tu perfil",
+ "Além dos números, o perfil mostra a tendência do ouro (a partir de dois envios) e quantas pessoas você convidou. O ranking tem uma ordenação por convites.": "Además de los números, el perfil muestra la tendencia del oro (a partir de dos envíos) y a cuántas personas invitaste. El ranking tiene un orden por invitaciones.",
+ "Selo verificado (em breve)": "Sello verificado (próximamente)",
+ "O selo “Verificado” indicará que a pessoa participa da comunidade no Discord e usou o código de convite do cadastro. Ele não prova que os números do jogo são reais. Perfis verificados poderão usar o widget para OBS, uma página só com os seus números.": "El sello «Verificado» indicará que la persona participa en la comunidad de Discord y usó el código de invitación del registro. No prueba que los números del juego sean reales. Los perfiles verificados podrán usar el widget para OBS, una página solo con sus números."
  },
  "en": {
  "Código aberto para conferir": "Open source to verify",
@@ -459,7 +463,11 @@
  "Disponível para perfis verificados.": "Available for verified profiles.",
  "Tendência do ouro": "Gold trend",
  "Widget OBS | PirateBoard": "OBS widget | PirateBoard",
- "Widget para OBS com os números de um perfil verificado do PirateBoard.": "OBS widget with the numbers of a verified PirateBoard profile."
+ "Widget para OBS com os números de um perfil verificado do PirateBoard.": "OBS widget with the numbers of a verified PirateBoard profile.",
+ "O que o seu perfil mostra": "What your profile shows",
+ "Além dos números, o perfil mostra a tendência do ouro (a partir de dois envios) e quantas pessoas você convidou. O ranking tem uma ordenação por convites.": "Besides the numbers, the profile shows the gold trend (from two submissions) and how many people you invited. The ranking can be sorted by invites.",
+ "Selo verificado (em breve)": "Verified badge (coming soon)",
+ "O selo “Verificado” indicará que a pessoa participa da comunidade no Discord e usou o código de convite do cadastro. Ele não prova que os números do jogo são reais. Perfis verificados poderão usar o widget para OBS, uma página só com os seus números.": "The “Verified” badge will indicate that the person takes part in the Discord community and used the invite code from sign-up. It does not prove that the game numbers are real. Verified profiles will be able to use the OBS widget, a page with only their numbers."
  },
  "fr": {
  "Código aberto para conferir": "Code source ouvert, à vérifier",
@@ -689,7 +697,11 @@
  "Disponível para perfis verificados.": "Disponible pour les profils vérifiés.",
  "Tendência do ouro": "Tendance de l'or",
  "Widget OBS | PirateBoard": "Widget OBS | PirateBoard",
- "Widget para OBS com os números de um perfil verificado do PirateBoard.": "Widget pour OBS avec les chiffres d'un profil PirateBoard vérifié."
+ "Widget para OBS com os números de um perfil verificado do PirateBoard.": "Widget pour OBS avec les chiffres d'un profil PirateBoard vérifié.",
+ "O que o seu perfil mostra": "Ce que montre votre profil",
+ "Além dos números, o perfil mostra a tendência do ouro (a partir de dois envios) e quantas pessoas você convidou. O ranking tem uma ordenação por convites.": "Outre les chiffres, le profil montre la tendance de l'or (à partir de deux envois) et combien de personnes vous avez invitées. Le classement peut être trié par invitations.",
+ "Selo verificado (em breve)": "Badge vérifié (bientôt)",
+ "O selo “Verificado” indicará que a pessoa participa da comunidade no Discord e usou o código de convite do cadastro. Ele não prova que os números do jogo são reais. Perfis verificados poderão usar o widget para OBS, uma página só com os seus números.": "Le badge « Vérifié » indiquera que la personne participe à la communauté Discord et a utilisé le code d'invitation de l'inscription. Il ne prouve pas que les chiffres du jeu sont réels. Les profils vérifiés pourront utiliser le widget pour OBS, une page avec leurs seuls chiffres."
  },
  "it": {
  "Código aberto para conferir": "Codice aperto da verificare",
@@ -919,7 +931,11 @@
  "Disponível para perfis verificados.": "Disponibile per i profili verificati.",
  "Tendência do ouro": "Andamento dell'oro",
  "Widget OBS | PirateBoard": "Widget OBS | PirateBoard",
- "Widget para OBS com os números de um perfil verificado do PirateBoard.": "Widget per OBS con i numeri di un profilo PirateBoard verificato."
+ "Widget para OBS com os números de um perfil verificado do PirateBoard.": "Widget per OBS con i numeri di un profilo PirateBoard verificato.",
+ "O que o seu perfil mostra": "Cosa mostra il tuo profilo",
+ "Além dos números, o perfil mostra a tendência do ouro (a partir de dois envios) e quantas pessoas você convidou. O ranking tem uma ordenação por convites.": "Oltre ai numeri, il profilo mostra l'andamento dell'oro (da due invii) e quante persone hai invitato. La classifica può essere ordinata per inviti.",
+ "Selo verificado (em breve)": "Badge verificato (prossimamente)",
+ "O selo “Verificado” indicará que a pessoa participa da comunidade no Discord e usou o código de convite do cadastro. Ele não prova que os números do jogo são reais. Perfis verificados poderão usar o widget para OBS, uma página só com os seus números.": "Il badge «Verificato» indicherà che la persona partecipa alla comunità su Discord e ha usato il codice di invito della registrazione. Non prova che i numeri del gioco siano reali. I profili verificati potranno usare il widget per OBS, una pagina con i soli loro numeri."
  }
  };
   var LOCALES = { pt: 'pt-BR', es: 'es', en: 'en', fr: 'fr', it: 'it' };
