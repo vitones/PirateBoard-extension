@@ -247,7 +247,20 @@
  "Escreva pelo menos 20 caracteres.": "Escribe al menos 20 caracteres.",
  "Você já tem 3 sugestões esperando análise.": "Ya tienes 3 sugerencias en espera de análisis.",
  "Sugestões | PirateBoard": "Sugerencias | PirateBoard",
- "Envie uma sugestão de melhoria para o PirateBoard e ganhe um convite extra se ela for aceita.": "Envía una sugerencia de mejora para PirateBoard y gana una invitación extra si es aceptada."
+ "Envie uma sugestão de melhoria para o PirateBoard e ganhe um convite extra se ela for aceita.": "Envía una sugerencia de mejora para PirateBoard y gana una invitación extra si es aceptada.",
+ "Rede": "Red",
+ "Rede de convites": "Red de invitaciones",
+ "Rede de convites | PirateBoard": "Red de invitaciones | PirateBoard",
+ "Quem convidou quem no PirateBoard, só entre perfis que escolheram aparecer.": "Quién invitó a quién en PirateBoard, solo entre perfiles que eligieron aparecer.",
+ "Mostra quem convidou quem. Um vínculo só aparece quando as duas pessoas têm perfil público e ativaram esta opção. Por padrão, ninguém aparece.": "Muestra quién invitó a quién. Un vínculo solo aparece cuando las dos personas tienen perfil público y activaron esta opción. Por defecto, nadie aparece.",
+ "Participar": "Participar",
+ "Mostrar quem me convidou e quem eu convidei (só com perfil público)": "Mostrar quién me invitó y a quién invité (solo con perfil público)",
+ "Convidado por": "Invitado por",
+ "Convidou": "Invitó a",
+ "Ninguém ativou a rede ainda.": "Nadie activó la red todavía.",
+ "Não foi possível carregar.": "No se pudo cargar.",
+ "Preferência salva.": "Preferencia guardada.",
+ "Não foi possível salvar.": "No se pudo guardar."
  },
  "en": {
  "Código aberto para conferir": "Open source to verify",
@@ -495,7 +508,20 @@
  "Escreva pelo menos 20 caracteres.": "Write at least 20 characters.",
  "Você já tem 3 sugestões esperando análise.": "You already have 3 suggestions awaiting review.",
  "Sugestões | PirateBoard": "Suggestions | PirateBoard",
- "Envie uma sugestão de melhoria para o PirateBoard e ganhe um convite extra se ela for aceita.": "Send an improvement suggestion for PirateBoard and get an extra invite if it is accepted."
+ "Envie uma sugestão de melhoria para o PirateBoard e ganhe um convite extra se ela for aceita.": "Send an improvement suggestion for PirateBoard and get an extra invite if it is accepted.",
+ "Rede": "Network",
+ "Rede de convites": "Invite network",
+ "Rede de convites | PirateBoard": "Invite network | PirateBoard",
+ "Quem convidou quem no PirateBoard, só entre perfis que escolheram aparecer.": "Who invited whom on PirateBoard, only among profiles that chose to appear.",
+ "Mostra quem convidou quem. Um vínculo só aparece quando as duas pessoas têm perfil público e ativaram esta opção. Por padrão, ninguém aparece.": "Shows who invited whom. A link only appears when both people have a public profile and turned this option on. By default, nobody appears.",
+ "Participar": "Take part",
+ "Mostrar quem me convidou e quem eu convidei (só com perfil público)": "Show who invited me and who I invited (public profiles only)",
+ "Convidado por": "Invited by",
+ "Convidou": "Invited",
+ "Ninguém ativou a rede ainda.": "Nobody has turned the network on yet.",
+ "Não foi possível carregar.": "Could not load.",
+ "Preferência salva.": "Preference saved.",
+ "Não foi possível salvar.": "Could not save."
  },
  "fr": {
  "Código aberto para conferir": "Code source ouvert, à vérifier",
@@ -743,7 +769,20 @@
  "Escreva pelo menos 20 caracteres.": "Écrivez au moins 20 caractères.",
  "Você já tem 3 sugestões esperando análise.": "Vous avez déjà 3 suggestions en attente d'examen.",
  "Sugestões | PirateBoard": "Suggestions | PirateBoard",
- "Envie uma sugestão de melhoria para o PirateBoard e ganhe um convite extra se ela for aceita.": "Envoyez une suggestion d'amélioration pour PirateBoard et gagnez une invitation supplémentaire si elle est acceptée."
+ "Envie uma sugestão de melhoria para o PirateBoard e ganhe um convite extra se ela for aceita.": "Envoyez une suggestion d'amélioration pour PirateBoard et gagnez une invitation supplémentaire si elle est acceptée.",
+ "Rede": "Réseau",
+ "Rede de convites": "Réseau d'invitations",
+ "Rede de convites | PirateBoard": "Réseau d'invitations | PirateBoard",
+ "Quem convidou quem no PirateBoard, só entre perfis que escolheram aparecer.": "Qui a invité qui sur PirateBoard, uniquement entre profils ayant choisi d'apparaître.",
+ "Mostra quem convidou quem. Um vínculo só aparece quando as duas pessoas têm perfil público e ativaram esta opção. Por padrão, ninguém aparece.": "Montre qui a invité qui. Un lien n'apparaît que si les deux personnes ont un profil public et ont activé cette option. Par défaut, personne n'apparaît.",
+ "Participar": "Participer",
+ "Mostrar quem me convidou e quem eu convidei (só com perfil público)": "Afficher qui m'a invité et qui j'ai invité (profil public uniquement)",
+ "Convidado por": "Invité par",
+ "Convidou": "A invité",
+ "Ninguém ativou a rede ainda.": "Personne n'a encore activé le réseau.",
+ "Não foi possível carregar.": "Chargement impossible.",
+ "Preferência salva.": "Préférence enregistrée.",
+ "Não foi possível salvar.": "Impossible d'enregistrer."
  },
  "it": {
  "Código aberto para conferir": "Codice aperto da verificare",
@@ -991,7 +1030,20 @@
  "Escreva pelo menos 20 caracteres.": "Scrivi almeno 20 caratteri.",
  "Você já tem 3 sugestões esperando análise.": "Hai già 3 suggerimenti in attesa di esame.",
  "Sugestões | PirateBoard": "Suggerimenti | PirateBoard",
- "Envie uma sugestão de melhoria para o PirateBoard e ganhe um convite extra se ela for aceita.": "Invia un suggerimento di miglioramento per PirateBoard e ottieni un invito extra se viene accettato."
+ "Envie uma sugestão de melhoria para o PirateBoard e ganhe um convite extra se ela for aceita.": "Invia un suggerimento di miglioramento per PirateBoard e ottieni un invito extra se viene accettato.",
+ "Rede": "Rete",
+ "Rede de convites": "Rete di inviti",
+ "Rede de convites | PirateBoard": "Rete di inviti | PirateBoard",
+ "Quem convidou quem no PirateBoard, só entre perfis que escolheram aparecer.": "Chi ha invitato chi su PirateBoard, solo tra profili che hanno scelto di apparire.",
+ "Mostra quem convidou quem. Um vínculo só aparece quando as duas pessoas têm perfil público e ativaram esta opção. Por padrão, ninguém aparece.": "Mostra chi ha invitato chi. Un legame appare solo quando entrambe le persone hanno un profilo pubblico e hanno attivato questa opzione. Per impostazione predefinita, nessuno appare.",
+ "Participar": "Partecipa",
+ "Mostrar quem me convidou e quem eu convidei (só com perfil público)": "Mostra chi mi ha invitato e chi ho invitato (solo con profilo pubblico)",
+ "Convidado por": "Invitato da",
+ "Convidou": "Ha invitato",
+ "Ninguém ativou a rede ainda.": "Nessuno ha ancora attivato la rete.",
+ "Não foi possível carregar.": "Impossibile caricare.",
+ "Preferência salva.": "Preferenza salvata.",
+ "Não foi possível salvar.": "Impossibile salvare."
  }
  };
   var LOCALES = { pt: 'pt-BR', es: 'es', en: 'en', fr: 'fr', it: 'it' };
