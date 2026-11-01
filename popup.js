@@ -1,4 +1,4 @@
-// Endereco da API: preview na Cloudflare (ver host_permissions no manifest); para o ambiente local use http://127.0.0.1:8799.
+// Endereco da API: producao na Cloudflare (ver host_permissions no manifest). Para testar localmente, troque pela porta do wrangler dev e nao publique assim.
 var API = 'https://pirateboard.veetones.workers.dev';
 var snapshot = null;
 

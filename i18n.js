@@ -313,7 +313,13 @@
  "Por isso, peço três coisas. Primeiro, que me avisem se algo no projeto causar qualquer incômodo, e eu ajusto ou removo o que for preciso. Segundo, se existir ou vier a existir uma forma oficial de acessar esses números, eu adoraria usá-la no lugar da leitura da página de perfil. Terceiro, se puderem, deixem sua orientação sobre como um projeto de fãs como este pode existir em harmonia com as regras de vocês.": "Por eso, pido tres cosas. Primero, que me avisen si algo del proyecto causa cualquier molestia, y yo ajusto o retiro lo que haga falta. Segundo, si existe o llega a existir una forma oficial de acceder a esos números, me encantaría usarla en lugar de leer la página del perfil. Tercero, si pueden, dejen su orientación sobre cómo un proyecto de fans como este puede existir en armonía con sus reglas.",
  "Obrigado por criarem um mar onde tanta gente encontrou amigos e aventuras. Se este projeto puder, de alguma forma, retribuir um pouco disso, já terá valido a pena.": "Gracias por crear un mar donde tanta gente encontró amigos y aventuras. Si este proyecto puede, de alguna forma, devolver un poco de eso, ya habrá valido la pena.",
  "Com respeito e gratidão,": "Con respeto y gratitud,",
- "Veetones, criador do PirateBoard (Brasil). Contato: pirateboard@gmail.com": "Veetones, creador de PirateBoard (Brasil). Contacto: pirateboard@gmail.com"
+ "Veetones, criador do PirateBoard (Brasil). Contato: pirateboard@gmail.com": "Veetones, creador de PirateBoard (Brasil). Contacto: pirateboard@gmail.com",
+ "perfis cadastrados": "perfiles registrados",
+ "envios de dados": "envíos de datos",
+ "de ouro somado": "de oro sumado",
+ "Metas de Pirata somadas": "Metas de Pirata sumadas",
+ "Termos de uso do PirateBoard, ranking comunitário de Sea of Thieves.": "Términos de uso de PirateBoard, ranking comunitario de Sea of Thieves.",
+ "Política de privacidade do PirateBoard: quais dados guardamos, por quanto tempo e como apagar.": "Política de privacidad de PirateBoard: qué datos guardamos, por cuánto tiempo y cómo borrarlos."
  },
  "en": {
  "Código aberto para conferir": "Open source to verify",
@@ -627,7 +633,13 @@
  "Por isso, peço três coisas. Primeiro, que me avisem se algo no projeto causar qualquer incômodo, e eu ajusto ou removo o que for preciso. Segundo, se existir ou vier a existir uma forma oficial de acessar esses números, eu adoraria usá-la no lugar da leitura da página de perfil. Terceiro, se puderem, deixem sua orientação sobre como um projeto de fãs como este pode existir em harmonia com as regras de vocês.": "For that reason, I ask for three things. First, that you let me know if anything in the project causes any discomfort, and I will adjust or remove whatever is needed. Second, if an official way to access these numbers exists or ever exists, I would love to use it instead of reading the profile page. Third, if you can, share your guidance on how a fan project like this can exist in harmony with your rules.",
  "Obrigado por criarem um mar onde tanta gente encontrou amigos e aventuras. Se este projeto puder, de alguma forma, retribuir um pouco disso, já terá valido a pena.": "Thank you for creating a sea where so many people found friends and adventures. If this project can, in some way, give a little of that back, it will have been worth it.",
  "Com respeito e gratidão,": "With respect and gratitude,",
- "Veetones, criador do PirateBoard (Brasil). Contato: pirateboard@gmail.com": "Veetones, creator of PirateBoard (Brazil). Contact: pirateboard@gmail.com"
+ "Veetones, criador do PirateBoard (Brasil). Contato: pirateboard@gmail.com": "Veetones, creator of PirateBoard (Brazil). Contact: pirateboard@gmail.com",
+ "perfis cadastrados": "registered profiles",
+ "envios de dados": "data submissions",
+ "de ouro somado": "of gold combined",
+ "Metas de Pirata somadas": "Pirate Goals combined",
+ "Termos de uso do PirateBoard, ranking comunitário de Sea of Thieves.": "PirateBoard terms of use, a community ranking for Sea of Thieves.",
+ "Política de privacidade do PirateBoard: quais dados guardamos, por quanto tempo e como apagar.": "PirateBoard privacy policy: what data we keep, for how long and how to delete it."
  },
  "fr": {
  "Código aberto para conferir": "Code source ouvert, à vérifier",
@@ -941,7 +953,13 @@
  "Por isso, peço três coisas. Primeiro, que me avisem se algo no projeto causar qualquer incômodo, e eu ajusto ou removo o que for preciso. Segundo, se existir ou vier a existir uma forma oficial de acessar esses números, eu adoraria usá-la no lugar da leitura da página de perfil. Terceiro, se puderem, deixem sua orientação sobre como um projeto de fãs como este pode existir em harmonia com as regras de vocês.": "C'est pourquoi je demande trois choses. D'abord, que vous me préveniez si quelque chose dans le projet vous gêne, et j'ajusterai ou retirerai ce qu'il faut. Ensuite, s'il existe ou existera un moyen officiel d'accéder à ces chiffres, j'adorerais l'utiliser à la place de la lecture de la page de profil. Enfin, si vous le pouvez, partagez vos conseils sur la façon dont un projet de fans comme celui-ci peut exister en harmonie avec vos règles.",
  "Obrigado por criarem um mar onde tanta gente encontrou amigos e aventuras. Se este projeto puder, de alguma forma, retribuir um pouco disso, já terá valido a pena.": "Merci d'avoir créé une mer où tant de gens ont trouvé des amis et des aventures. Si ce projet peut, d'une manière ou d'une autre, rendre un peu de cela, il en aura valu la peine.",
  "Com respeito e gratidão,": "Avec respect et gratitude,",
- "Veetones, criador do PirateBoard (Brasil). Contato: pirateboard@gmail.com": "Veetones, créateur de PirateBoard (Brésil). Contact : pirateboard@gmail.com"
+ "Veetones, criador do PirateBoard (Brasil). Contato: pirateboard@gmail.com": "Veetones, créateur de PirateBoard (Brésil). Contact : pirateboard@gmail.com",
+ "perfis cadastrados": "profils inscrits",
+ "envios de dados": "envois de données",
+ "de ouro somado": "d'or cumulé",
+ "Metas de Pirata somadas": "Objectifs de Pirate cumulés",
+ "Termos de uso do PirateBoard, ranking comunitário de Sea of Thieves.": "Conditions d'utilisation de PirateBoard, classement communautaire de Sea of Thieves.",
+ "Política de privacidade do PirateBoard: quais dados guardamos, por quanto tempo e como apagar.": "Politique de confidentialité de PirateBoard : quelles données nous conservons, combien de temps et comment les supprimer."
  },
  "it": {
  "Código aberto para conferir": "Codice aperto da verificare",
@@ -1255,7 +1273,13 @@
  "Por isso, peço três coisas. Primeiro, que me avisem se algo no projeto causar qualquer incômodo, e eu ajusto ou removo o que for preciso. Segundo, se existir ou vier a existir uma forma oficial de acessar esses números, eu adoraria usá-la no lugar da leitura da página de perfil. Terceiro, se puderem, deixem sua orientação sobre como um projeto de fãs como este pode existir em harmonia com as regras de vocês.": "Per questo chiedo tre cose. Primo, che mi avvisiate se qualcosa nel progetto vi crea disagio, e io modificherò o rimuoverò ciò che serve. Secondo, se esiste o esisterà un modo ufficiale per accedere a questi numeri, mi piacerebbe usarlo al posto della lettura della pagina del profilo. Terzo, se potete, condividete le vostre indicazioni su come un progetto di fan come questo possa convivere con le vostre regole.",
  "Obrigado por criarem um mar onde tanta gente encontrou amigos e aventuras. Se este projeto puder, de alguma forma, retribuir um pouco disso, já terá valido a pena.": "Grazie per aver creato un mare dove tante persone hanno trovato amici e avventure. Se questo progetto potrà, in qualche modo, restituire un po' di tutto questo, ne sarà valsa la pena.",
  "Com respeito e gratidão,": "Con rispetto e gratitudine,",
- "Veetones, criador do PirateBoard (Brasil). Contato: pirateboard@gmail.com": "Veetones, creatore di PirateBoard (Brasile). Contatto: pirateboard@gmail.com"
+ "Veetones, criador do PirateBoard (Brasil). Contato: pirateboard@gmail.com": "Veetones, creatore di PirateBoard (Brasile). Contatto: pirateboard@gmail.com",
+ "perfis cadastrados": "profili registrati",
+ "envios de dados": "invii di dati",
+ "de ouro somado": "di oro totale",
+ "Metas de Pirata somadas": "Obiettivi del Pirata totali",
+ "Termos de uso do PirateBoard, ranking comunitário de Sea of Thieves.": "Termini di utilizzo di PirateBoard, classifica della community di Sea of Thieves.",
+ "Política de privacidade do PirateBoard: quais dados guardamos, por quanto tempo e como apagar.": "Informativa sulla privacy di PirateBoard: quali dati conserviamo, per quanto tempo e come cancellarli."
  }
  };
   var LOCALES = { pt: 'pt-BR', es: 'es', en: 'en', fr: 'fr', it: 'it' };
