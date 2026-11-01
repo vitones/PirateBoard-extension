@@ -49,7 +49,12 @@ function render(parts) {
       });
     var dl = $('companies');
     dl.textContent = '';
-    snapshot.reputation.forEach(function (r) { row(dl, T(COMPANY_LABEL[r.company] || r.company), T('nível') + ' ' + r.level); });
+    var COUNT_LABEL = { promotions: 'Promoções', titles: 'Títulos', commendations: 'Condecorações', items: 'Itens', figureheads: 'Figuras de Proa' };
+    snapshot.reputation.forEach(function (r) {
+      var extra = Object.keys(COUNT_LABEL).filter(function (k) { return r.counts && r.counts[k]; })
+        .map(function (k) { return T(COUNT_LABEL[k]) + ' ' + r.counts[k][0] + '/' + r.counts[k][1]; }).join(' · ');
+      row(dl, T(COMPANY_LABEL[r.company] || r.company), T('nível') + ' ' + r.level + (extra ? ' · ' + extra : ''));
+    });
     $('companies-label').textContent = T('Reputação em ') + snapshot.reputation.length + T(' companhias');
     $('preview').textContent = JSON.stringify(snapshot, null, 2);
   }

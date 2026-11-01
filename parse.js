@@ -55,6 +55,44 @@
     return nums.length === 2 ? { pirateGoals: nums[0], shipGoals: nums[1] } : null;
   }
 
+  // Rotulos dos contadores "x/y" de cada companhia (portugues e ingles; outros idiomas sao ignorados).
+  var COUNT_LABELS = [
+    ['promotions', /^(Promo[çc][õo]es|Promotions)$/i],
+    ['titles', /^(T[íi]tulos|Titles)$/i],
+    ['commendations', /^(Condecora[çc][õo]es|Commendations)$/i],
+    ['items', /^(Itens|Items)$/i],
+    ['figureheads', /^(Figuras de Proa.*|Figureheads?.*)$/i],
+  ];
+
+  function countKey(line) {
+    for (var i = 0; i < COUNT_LABELS.length; i++) if (COUNT_LABELS[i][1].test(line)) return COUNT_LABELS[i][0];
+    return null;
+  }
+
+  // "34/42" -> [34, 42]
+  function toPair(s) {
+    var m = /^(\d[\d.,]*)\/(\d[\d.,]*)$/.exec(s);
+    if (!m) return null;
+    var a = toInt(m[1]), b = toInt(m[2]);
+    return a !== null && b !== null && a <= b && b <= 5000 ? [a, b] : null;
+  }
+
+  // Contadores logo depois do nome da companhia: [titulo da companhia], depois pares rotulo + "x/y".
+  // Para na primeira linha que nao e rotulo nem valor (ex.: nome de outra tripulacao).
+  function readCounts(l, from) {
+    var counts = {};
+    var i = from;
+    if (i < l.length && countKey(l[i]) === null && toPair(l[i]) === null) i++; // titulo da companhia
+    while (i + 1 < l.length) {
+      var key = countKey(l[i]);
+      var pair = key ? toPair(l[i + 1]) : null;
+      if (!key || !pair) break;
+      if (!(key in counts)) counts[key] = pair;
+      i += 2;
+    }
+    return counts;
+  }
+
   // Reputacao: o nivel e o numero na linha imediatamente antes do nome da companhia.
   function parseReputation(text) {
     var l = lines(text);
@@ -63,12 +101,16 @@
       for (var key in COMPANY_NAMES) {
         if (COMPANY_NAMES[key].indexOf(l[i]) !== -1) {
           var lv = toInt(l[i - 1]);
-          if (lv !== null && lv <= 100 && !(key in found)) found[key] = lv;
+          if (lv !== null && lv <= 100 && !(key in found)) found[key] = { level: lv, counts: readCounts(l, i + 1) };
         }
       }
     }
     var out = [];
-    for (var k in found) out.push({ company: k, level: found[k] });
+    for (var k in found) {
+      var entry = { company: k, level: found[k].level };
+      if (Object.keys(found[k].counts).length) entry.counts = found[k].counts;
+      out.push(entry);
+    }
     return out;
   }
 

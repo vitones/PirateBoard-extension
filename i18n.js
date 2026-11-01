@@ -57,7 +57,6 @@
  "Confira os números": "Revisa los números",
  "no painel da extensão, cole o convite, escolha o país e aceite os termos. Nada é enviado sem o seu clique em Enviar.": "en el panel de la extensión, pega la invitación, elige el país y acepta los términos. No se envía nada sin tu clic en Enviar.",
  "O que é enviado": "Qué se envía",
- "Gamertag, país, nível, ouro, metas de Pirata e de Navio e o nível de reputação nas companhias. A extensão mostra os dados exatos antes de enviar. Ela não lê cookies, senhas nem dados da sua conta Xbox.": "Gamertag, país, nivel, oro, metas de Pirata y de Barco y el nivel de reputación en las compañías. La extensión muestra los datos exactos antes de enviar. No lee cookies, contraseñas ni datos de tu cuenta Xbox.",
  "Regras": "Reglas",
  "Uma atualização por dia (janela de 24 horas).": "Una actualización por día (ventana de 24 horas).",
  "Números que diminuem ou crescem de forma implausível são recusados.": "Los números que disminuyen o crecen de forma inverosímil se rechazan.",
@@ -131,7 +130,13 @@
  "Suriname": "Surinam",
  "Metas de Pirata": "Metas de Pirata",
  "Pirata": "Pirata",
- "País": "País"
+ "País": "País",
+ "Promoções": "Ascensos",
+ "Títulos": "Títulos",
+ "Condecorações": "Condecoraciones",
+ "Itens": "Objetos",
+ "Figuras de Proa": "Mascarones de proa",
+ "Gamertag, país, nível, ouro, metas de Pirata e de Navio e o nível de reputação nas companhias, com os contadores de promoções, títulos, condecorações, itens e figuras de proa de cada uma (por exemplo, 8/27). A extensão mostra os dados exatos antes de enviar. Ela não lê cookies, senhas nem dados da sua conta Xbox.": "Gamertag, país, nivel, oro, metas de Pirata y de Barco y el nivel de reputación en las compañías, con los contadores de ascensos, títulos, condecoraciones, objetos y mascarones de proa de cada una (por ejemplo, 8/27). La extensión muestra los datos exactos antes de enviar. No lee cookies, contraseñas ni datos de tu cuenta Xbox."
  },
  "en": {
  "Código aberto para conferir": "Open source to verify",
@@ -189,7 +194,6 @@
  "Confira os números": "Check the numbers",
  "no painel da extensão, cole o convite, escolha o país e aceite os termos. Nada é enviado sem o seu clique em Enviar.": "in the extension panel, paste the invite, choose your country and accept the terms. Nothing is sent without your click on Send.",
  "O que é enviado": "What is sent",
- "Gamertag, país, nível, ouro, metas de Pirata e de Navio e o nível de reputação nas companhias. A extensão mostra os dados exatos antes de enviar. Ela não lê cookies, senhas nem dados da sua conta Xbox.": "Gamertag, country, level, gold, Pirate and Ship milestones and your reputation level with the companies. The extension shows the exact data before sending. It does not read cookies, passwords or your Xbox account data.",
  "Regras": "Rules",
  "Uma atualização por dia (janela de 24 horas).": "One update per day (24-hour window).",
  "Números que diminuem ou crescem de forma implausível são recusados.": "Numbers that decrease or grow implausibly are rejected.",
@@ -263,7 +267,13 @@
  "Suriname": "Suriname",
  "Metas de Pirata": "Pirate Milestones",
  "Pirata": "Pirate",
- "País": "Country"
+ "País": "Country",
+ "Promoções": "Promotions",
+ "Títulos": "Titles",
+ "Condecorações": "Commendations",
+ "Itens": "Items",
+ "Figuras de Proa": "Figureheads",
+ "Gamertag, país, nível, ouro, metas de Pirata e de Navio e o nível de reputação nas companhias, com os contadores de promoções, títulos, condecorações, itens e figuras de proa de cada uma (por exemplo, 8/27). A extensão mostra os dados exatos antes de enviar. Ela não lê cookies, senhas nem dados da sua conta Xbox.": "Gamertag, country, level, gold, Pirate and Ship milestones and your reputation level with the companies, plus each one's counters for promotions, titles, commendations, items and figureheads (for example, 8/27). The extension shows the exact data before sending. It does not read cookies, passwords or your Xbox account data."
  },
  "fr": {
  "Código aberto para conferir": "Code source ouvert, à vérifier",
@@ -321,7 +331,6 @@
  "Confira os números": "Vérifiez les chiffres",
  "no painel da extensão, cole o convite, escolha o país e aceite os termos. Nada é enviado sem o seu clique em Enviar.": "dans le panneau de l'extension, collez l'invitation, choisissez votre pays et acceptez les conditions. Rien n'est envoyé sans votre clic sur Envoyer.",
  "O que é enviado": "Ce qui est envoyé",
- "Gamertag, país, nível, ouro, metas de Pirata e de Navio e o nível de reputação nas companhias. A extensão mostra os dados exatos antes de enviar. Ela não lê cookies, senhas nem dados da sua conta Xbox.": "Gamertag, pays, niveau, or, objectifs de Pirate et de Navire et niveau de réputation auprès des compagnies. L'extension affiche les données exactes avant l'envoi. Elle ne lit ni cookies, ni mots de passe, ni données de votre compte Xbox.",
  "Regras": "Règles",
  "Uma atualização por dia (janela de 24 horas).": "Une mise à jour par jour (fenêtre de 24 heures).",
  "Números que diminuem ou crescem de forma implausível são recusados.": "Les chiffres qui diminuent ou augmentent de façon invraisemblable sont refusés.",
@@ -395,7 +404,13 @@
  "Suriname": "Suriname",
  "Metas de Pirata": "Objectifs de Pirate",
  "Pirata": "Pirate",
- "País": "Pays"
+ "País": "Pays",
+ "Promoções": "Promotions",
+ "Títulos": "Titres",
+ "Condecorações": "Distinctions",
+ "Itens": "Objets",
+ "Figuras de Proa": "Figures de proue",
+ "Gamertag, país, nível, ouro, metas de Pirata e de Navio e o nível de reputação nas companhias, com os contadores de promoções, títulos, condecorações, itens e figuras de proa de cada uma (por exemplo, 8/27). A extensão mostra os dados exatos antes de enviar. Ela não lê cookies, senhas nem dados da sua conta Xbox.": "Gamertag, pays, niveau, or, objectifs de Pirate et de Navire et niveau de réputation auprès des compagnies, avec les compteurs de promotions, titres, distinctions, objets et figures de proue de chacune (par exemple, 8/27). L'extension affiche les données exactes avant l'envoi. Elle ne lit ni cookies, ni mots de passe, ni données de votre compte Xbox."
  },
  "it": {
  "Código aberto para conferir": "Codice aperto da verificare",
@@ -453,7 +468,6 @@
  "Confira os números": "Controlla i numeri",
  "no painel da extensão, cole o convite, escolha o país e aceite os termos. Nada é enviado sem o seu clique em Enviar.": "nel pannello dell'estensione, incolla l'invito, scegli il paese e accetta i termini. Nulla viene inviato senza il tuo clic su Invia.",
  "O que é enviado": "Cosa viene inviato",
- "Gamertag, país, nível, ouro, metas de Pirata e de Navio e o nível de reputação nas companhias. A extensão mostra os dados exatos antes de enviar. Ela não lê cookies, senhas nem dados da sua conta Xbox.": "Gamertag, paese, livello, oro, traguardi da Pirata e della nave e livello di reputazione nelle compagnie. L'estensione mostra i dati esatti prima dell'invio. Non legge cookie, password né dati del tuo account Xbox.",
  "Regras": "Regole",
  "Uma atualização por dia (janela de 24 horas).": "Un aggiornamento al giorno (finestra di 24 ore).",
  "Números que diminuem ou crescem de forma implausível são recusados.": "I numeri che diminuiscono o crescono in modo inverosimile vengono rifiutati.",
@@ -527,7 +541,13 @@
  "Suriname": "Suriname",
  "Metas de Pirata": "Traguardi da Pirata",
  "Pirata": "Pirata",
- "País": "Paese"
+ "País": "Paese",
+ "Promoções": "Promozioni",
+ "Títulos": "Titoli",
+ "Condecorações": "Onorificenze",
+ "Itens": "Oggetti",
+ "Figuras de Proa": "Polene",
+ "Gamertag, país, nível, ouro, metas de Pirata e de Navio e o nível de reputação nas companhias, com os contadores de promoções, títulos, condecorações, itens e figuras de proa de cada uma (por exemplo, 8/27). A extensão mostra os dados exatos antes de enviar. Ela não lê cookies, senhas nem dados da sua conta Xbox.": "Gamertag, paese, livello, oro, traguardi da Pirata e della nave e livello di reputazione nelle compagnie, con i contatori di promozioni, titoli, onorificenze, oggetti e polene di ciascuna (per esempio, 8/27). L'estensione mostra i dati esatti prima dell'invio. Non legge cookie, password né dati del tuo account Xbox."
  }
  };
   var LOCALES = { pt: 'pt-BR', es: 'es', en: 'en', fr: 'fr', it: 'it' };
