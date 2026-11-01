@@ -220,7 +220,16 @@
  "pirateboard@gmail.com": "pirateboard@gmail.com",
  "Termos · PirateBoard": "Términos · PirateBoard",
  "Privacidade · PirateBoard": "Privacidad · PirateBoard",
- "Sea of Thieves e suas marcas pertencem aos respectivos titulares.": "Sea of Thieves y sus marcas pertenecen a sus respectivos titulares."
+ "Sea of Thieves e suas marcas pertencem aos respectivos titulares.": "Sea of Thieves y sus marcas pertenecen a sus respectivos titulares.",
+ "Verificado": "Verificado",
+ "Membro verificado da comunidade": "Miembro verificado de la comunidad",
+ "Pessoas convidadas": "Personas invitadas",
+ "Convites": "Invitaciones",
+ "Widget para OBS": "Widget para OBS",
+ "Disponível para perfis verificados.": "Disponible para perfiles verificados.",
+ "Tendência do ouro": "Tendencia del oro",
+ "Widget OBS | PirateBoard": "Widget OBS | PirateBoard",
+ "Widget para OBS com os números de um perfil verificado do PirateBoard.": "Widget para OBS con los números de un perfil verificado de PirateBoard."
  },
  "en": {
  "Código aberto para conferir": "Open source to verify",
@@ -441,7 +450,16 @@
  "pirateboard@gmail.com": "pirateboard@gmail.com",
  "Termos · PirateBoard": "Terms · PirateBoard",
  "Privacidade · PirateBoard": "Privacy · PirateBoard",
- "Sea of Thieves e suas marcas pertencem aos respectivos titulares.": "Sea of Thieves and its trademarks belong to their respective owners."
+ "Sea of Thieves e suas marcas pertencem aos respectivos titulares.": "Sea of Thieves and its trademarks belong to their respective owners.",
+ "Verificado": "Verified",
+ "Membro verificado da comunidade": "Verified community member",
+ "Pessoas convidadas": "People invited",
+ "Convites": "Invites",
+ "Widget para OBS": "OBS widget",
+ "Disponível para perfis verificados.": "Available for verified profiles.",
+ "Tendência do ouro": "Gold trend",
+ "Widget OBS | PirateBoard": "OBS widget | PirateBoard",
+ "Widget para OBS com os números de um perfil verificado do PirateBoard.": "OBS widget with the numbers of a verified PirateBoard profile."
  },
  "fr": {
  "Código aberto para conferir": "Code source ouvert, à vérifier",
@@ -662,7 +680,16 @@
  "pirateboard@gmail.com": "pirateboard@gmail.com",
  "Termos · PirateBoard": "Conditions · PirateBoard",
  "Privacidade · PirateBoard": "Confidentialité · PirateBoard",
- "Sea of Thieves e suas marcas pertencem aos respectivos titulares.": "Sea of Thieves et ses marques appartiennent à leurs titulaires respectifs."
+ "Sea of Thieves e suas marcas pertencem aos respectivos titulares.": "Sea of Thieves et ses marques appartiennent à leurs titulaires respectifs.",
+ "Verificado": "Vérifié",
+ "Membro verificado da comunidade": "Membre vérifié de la communauté",
+ "Pessoas convidadas": "Personnes invitées",
+ "Convites": "Invitations",
+ "Widget para OBS": "Widget pour OBS",
+ "Disponível para perfis verificados.": "Disponible pour les profils vérifiés.",
+ "Tendência do ouro": "Tendance de l'or",
+ "Widget OBS | PirateBoard": "Widget OBS | PirateBoard",
+ "Widget para OBS com os números de um perfil verificado do PirateBoard.": "Widget pour OBS avec les chiffres d'un profil PirateBoard vérifié."
  },
  "it": {
  "Código aberto para conferir": "Codice aperto da verificare",
@@ -883,7 +910,16 @@
  "pirateboard@gmail.com": "pirateboard@gmail.com",
  "Termos · PirateBoard": "Termini · PirateBoard",
  "Privacidade · PirateBoard": "Privacy · PirateBoard",
- "Sea of Thieves e suas marcas pertencem aos respectivos titulares.": "Sea of Thieves e i suoi marchi appartengono ai rispettivi titolari."
+ "Sea of Thieves e suas marcas pertencem aos respectivos titulares.": "Sea of Thieves e i suoi marchi appartengono ai rispettivi titolari.",
+ "Verificado": "Verificato",
+ "Membro verificado da comunidade": "Membro verificato della comunità",
+ "Pessoas convidadas": "Persone invitate",
+ "Convites": "Inviti",
+ "Widget para OBS": "Widget per OBS",
+ "Disponível para perfis verificados.": "Disponibile per i profili verificati.",
+ "Tendência do ouro": "Andamento dell'oro",
+ "Widget OBS | PirateBoard": "Widget OBS | PirateBoard",
+ "Widget para OBS com os números de um perfil verificado do PirateBoard.": "Widget per OBS con i numeri di un profilo PirateBoard verificato."
  }
  };
   var LOCALES = { pt: 'pt-BR', es: 'es', en: 'en', fr: 'fr', it: 'it' };
