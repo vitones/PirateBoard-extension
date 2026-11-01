@@ -260,7 +260,12 @@
  "Ninguém ativou a rede ainda.": "Nadie activó la red todavía.",
  "Não foi possível carregar.": "No se pudo cargar.",
  "Preferência salva.": "Preferencia guardada.",
- "Não foi possível salvar.": "No se pudo guardar."
+ "Não foi possível salvar.": "No se pudo guardar.",
+ "Cartão do perfil": "Tarjeta del perfil",
+ "Cartão do perfil | PirateBoard": "Tarjeta del perfil | PirateBoard",
+ "Salvar imagem": "Guardar imagen",
+ "A imagem é gerada no seu navegador, só com os números públicos do perfil.": "La imagen se genera en tu navegador, solo con los números públicos del perfil.",
+ "Cartão para compartilhar": "Tarjeta para compartir"
  },
  "en": {
  "Código aberto para conferir": "Open source to verify",
@@ -521,7 +526,12 @@
  "Ninguém ativou a rede ainda.": "Nobody has turned the network on yet.",
  "Não foi possível carregar.": "Could not load.",
  "Preferência salva.": "Preference saved.",
- "Não foi possível salvar.": "Could not save."
+ "Não foi possível salvar.": "Could not save.",
+ "Cartão do perfil": "Profile card",
+ "Cartão do perfil | PirateBoard": "Profile card | PirateBoard",
+ "Salvar imagem": "Save image",
+ "A imagem é gerada no seu navegador, só com os números públicos do perfil.": "The image is generated in your browser, using only the profile's public numbers.",
+ "Cartão para compartilhar": "Shareable card"
  },
  "fr": {
  "Código aberto para conferir": "Code source ouvert, à vérifier",
@@ -782,7 +792,12 @@
  "Ninguém ativou a rede ainda.": "Personne n'a encore activé le réseau.",
  "Não foi possível carregar.": "Chargement impossible.",
  "Preferência salva.": "Préférence enregistrée.",
- "Não foi possível salvar.": "Impossible d'enregistrer."
+ "Não foi possível salvar.": "Impossible d'enregistrer.",
+ "Cartão do perfil": "Carte du profil",
+ "Cartão do perfil | PirateBoard": "Carte du profil | PirateBoard",
+ "Salvar imagem": "Enregistrer l'image",
+ "A imagem é gerada no seu navegador, só com os números públicos do perfil.": "L'image est générée dans votre navigateur, uniquement avec les chiffres publics du profil.",
+ "Cartão para compartilhar": "Carte à partager"
  },
  "it": {
  "Código aberto para conferir": "Codice aperto da verificare",
@@ -1043,7 +1058,12 @@
  "Ninguém ativou a rede ainda.": "Nessuno ha ancora attivato la rete.",
  "Não foi possível carregar.": "Impossibile caricare.",
  "Preferência salva.": "Preferenza salvata.",
- "Não foi possível salvar.": "Impossibile salvare."
+ "Não foi possível salvar.": "Impossibile salvare.",
+ "Cartão do perfil": "Scheda del profilo",
+ "Cartão do perfil | PirateBoard": "Scheda del profilo | PirateBoard",
+ "Salvar imagem": "Salva immagine",
+ "A imagem é gerada no seu navegador, só com os números públicos do perfil.": "L'immagine viene generata nel tuo browser, solo con i numeri pubblici del profilo.",
+ "Cartão para compartilhar": "Scheda da condividere"
  }
  };
   var LOCALES = { pt: 'pt-BR', es: 'es', en: 'en', fr: 'fr', it: 'it' };
