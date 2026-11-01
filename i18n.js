@@ -235,7 +235,19 @@
  "Selo verificado (em breve)": "Sello verificado (próximamente)",
  "O selo “Verificado” indicará que a pessoa participa da comunidade no Discord e usou o código de convite do cadastro. Ele não prova que os números do jogo são reais. Perfis verificados poderão usar o widget para OBS, uma página só com os seus números.": "El sello «Verificado» indicará que la persona participa en la comunidad de Discord y usó el código de invitación del registro. No prueba que los números del juego sean reales. Los perfiles verificados podrán usar el widget para OBS, una página solo con sus números.",
  "Qualquer pessoa pode denunciar um perfil ou contestar dados na página Denunciar. Podemos ocultar um perfil de forma preventiva, analisá-lo, excluí-lo e, se necessário, revogar convites de quem o convidou. Quem for impedido de usar uma gamertag pode reivindicá-la por denúncia; a titularidade é confirmada por mensagem enviada pelo Xbox, a partir dessa gamertag, para Veetones.": "Cualquier persona puede denunciar un perfil o impugnar datos en la página Denunciar. Podemos ocultar un perfil de forma preventiva, analizarlo, eliminarlo y, si es necesario, revocar invitaciones de quien lo invitó. Quien no pueda usar su gamertag puede reclamarla mediante una denuncia; la titularidad se confirma con un mensaje enviado por Xbox, desde esa gamertag, a Veetones.",
- "Para confirmar que a gamertag é sua, envie uma mensagem pelo Xbox, a partir dela, para Veetones. O perfil continua como está até a análise terminar.": "Para confirmar que la gamertag es tuya, envía un mensaje por Xbox, desde ella, a Veetones. El perfil sigue como está hasta que termine el análisis."
+ "Para confirmar que a gamertag é sua, envie uma mensagem pelo Xbox, a partir dela, para Veetones. O perfil continua como está até a análise terminar.": "Para confirmar que la gamertag es tuya, envía un mensaje por Xbox, desde ella, a Veetones. El perfil sigue como está hasta que termine el análisis.",
+ "Sugestões": "Sugerencias",
+ "Tem uma ideia para o PirateBoard? Cada sugestão nova que for aceita garante a você um código de convite adicional, que vale mesmo antes da próxima vaga de 3 dias. Só quem já tem perfil pode enviar, até 3 sugestões esperando análise.": "¿Tienes una idea para PirateBoard? Cada sugerencia nueva que sea aceptada te garantiza un código de invitación adicional, válido incluso antes del próximo cupo de 3 días. Solo quien ya tiene perfil puede enviar, hasta 3 sugerencias en espera de análisis.",
+ "Código de edição": "Código de edición",
+ "Sua sugestão (20 a 1000 caracteres)": "Tu sugerencia (de 20 a 1000 caracteres)",
+ "Sua sugestão fica ligada ao seu perfil só para conceder o convite, e é apagada se você excluir o perfil.": "Tu sugerencia queda vinculada a tu perfil solo para conceder la invitación y se borra si eliminas el perfil.",
+ "Enviar sugestão": "Enviar sugerencia",
+ "Sugestão enviada. Se for aceita, você ganha um convite extra.": "Sugerencia enviada. Si es aceptada, ganas una invitación extra.",
+ "Gamertag ou código de edição incorretos.": "Gamertag o código de edición incorrectos.",
+ "Escreva pelo menos 20 caracteres.": "Escribe al menos 20 caracteres.",
+ "Você já tem 3 sugestões esperando análise.": "Ya tienes 3 sugerencias en espera de análisis.",
+ "Sugestões | PirateBoard": "Sugerencias | PirateBoard",
+ "Envie uma sugestão de melhoria para o PirateBoard e ganhe um convite extra se ela for aceita.": "Envía una sugerencia de mejora para PirateBoard y gana una invitación extra si es aceptada."
  },
  "en": {
  "Código aberto para conferir": "Open source to verify",
@@ -471,7 +483,19 @@
  "Selo verificado (em breve)": "Verified badge (coming soon)",
  "O selo “Verificado” indicará que a pessoa participa da comunidade no Discord e usou o código de convite do cadastro. Ele não prova que os números do jogo são reais. Perfis verificados poderão usar o widget para OBS, uma página só com os seus números.": "The “Verified” badge will indicate that the person takes part in the Discord community and used the invite code from sign-up. It does not prove that the game numbers are real. Verified profiles will be able to use the OBS widget, a page with only their numbers.",
  "Qualquer pessoa pode denunciar um perfil ou contestar dados na página Denunciar. Podemos ocultar um perfil de forma preventiva, analisá-lo, excluí-lo e, se necessário, revogar convites de quem o convidou. Quem for impedido de usar uma gamertag pode reivindicá-la por denúncia; a titularidade é confirmada por mensagem enviada pelo Xbox, a partir dessa gamertag, para Veetones.": "Anyone can report a profile or dispute data on the Report page. We may hide a profile as a precaution, review it, delete it and, if needed, revoke invites from whoever invited it. Anyone blocked from using their gamertag can claim it through a report; ownership is confirmed by a message sent through Xbox, from that gamertag, to Veetones.",
- "Para confirmar que a gamertag é sua, envie uma mensagem pelo Xbox, a partir dela, para Veetones. O perfil continua como está até a análise terminar.": "To confirm the gamertag is yours, send a message through Xbox, from it, to Veetones. The profile stays as it is until the review ends."
+ "Para confirmar que a gamertag é sua, envie uma mensagem pelo Xbox, a partir dela, para Veetones. O perfil continua como está até a análise terminar.": "To confirm the gamertag is yours, send a message through Xbox, from it, to Veetones. The profile stays as it is until the review ends.",
+ "Sugestões": "Suggestions",
+ "Tem uma ideia para o PirateBoard? Cada sugestão nova que for aceita garante a você um código de convite adicional, que vale mesmo antes da próxima vaga de 3 dias. Só quem já tem perfil pode enviar, até 3 sugestões esperando análise.": "Got an idea for PirateBoard? Each new suggestion that is accepted earns you an extra invite code, usable even before the next 3-day slot. Only people who already have a profile can submit, up to 3 suggestions awaiting review.",
+ "Código de edição": "Edit code",
+ "Sua sugestão (20 a 1000 caracteres)": "Your suggestion (20 to 1000 characters)",
+ "Sua sugestão fica ligada ao seu perfil só para conceder o convite, e é apagada se você excluir o perfil.": "Your suggestion is tied to your profile only to grant the invite, and it is deleted if you delete the profile.",
+ "Enviar sugestão": "Send suggestion",
+ "Sugestão enviada. Se for aceita, você ganha um convite extra.": "Suggestion sent. If accepted, you get an extra invite.",
+ "Gamertag ou código de edição incorretos.": "Wrong gamertag or edit code.",
+ "Escreva pelo menos 20 caracteres.": "Write at least 20 characters.",
+ "Você já tem 3 sugestões esperando análise.": "You already have 3 suggestions awaiting review.",
+ "Sugestões | PirateBoard": "Suggestions | PirateBoard",
+ "Envie uma sugestão de melhoria para o PirateBoard e ganhe um convite extra se ela for aceita.": "Send an improvement suggestion for PirateBoard and get an extra invite if it is accepted."
  },
  "fr": {
  "Código aberto para conferir": "Code source ouvert, à vérifier",
@@ -707,7 +731,19 @@
  "Selo verificado (em breve)": "Badge vérifié (bientôt)",
  "O selo “Verificado” indicará que a pessoa participa da comunidade no Discord e usou o código de convite do cadastro. Ele não prova que os números do jogo são reais. Perfis verificados poderão usar o widget para OBS, uma página só com os seus números.": "Le badge « Vérifié » indiquera que la personne participe à la communauté Discord et a utilisé le code d'invitation de l'inscription. Il ne prouve pas que les chiffres du jeu sont réels. Les profils vérifiés pourront utiliser le widget pour OBS, une page avec leurs seuls chiffres.",
  "Qualquer pessoa pode denunciar um perfil ou contestar dados na página Denunciar. Podemos ocultar um perfil de forma preventiva, analisá-lo, excluí-lo e, se necessário, revogar convites de quem o convidou. Quem for impedido de usar uma gamertag pode reivindicá-la por denúncia; a titularidade é confirmada por mensagem enviada pelo Xbox, a partir dessa gamertag, para Veetones.": "Toute personne peut signaler un profil ou contester des données sur la page Signaler. Nous pouvons masquer un profil à titre préventif, l'examiner, le supprimer et, si nécessaire, révoquer les invitations de la personne qui l'a invité. Qui ne peut pas utiliser son gamertag peut le revendiquer par un signalement ; la titularité est confirmée par un message envoyé via Xbox, depuis ce gamertag, à Veetones.",
- "Para confirmar que a gamertag é sua, envie uma mensagem pelo Xbox, a partir dela, para Veetones. O perfil continua como está até a análise terminar.": "Pour confirmer que le gamertag est le vôtre, envoyez un message via Xbox, depuis celui-ci, à Veetones. Le profil reste tel quel jusqu'à la fin de l'examen."
+ "Para confirmar que a gamertag é sua, envie uma mensagem pelo Xbox, a partir dela, para Veetones. O perfil continua como está até a análise terminar.": "Pour confirmer que le gamertag est le vôtre, envoyez un message via Xbox, depuis celui-ci, à Veetones. Le profil reste tel quel jusqu'à la fin de l'examen.",
+ "Sugestões": "Suggestions",
+ "Tem uma ideia para o PirateBoard? Cada sugestão nova que for aceita garante a você um código de convite adicional, que vale mesmo antes da próxima vaga de 3 dias. Só quem já tem perfil pode enviar, até 3 sugestões esperando análise.": "Une idée pour PirateBoard ? Chaque nouvelle suggestion acceptée vous donne un code d'invitation supplémentaire, utilisable même avant le prochain créneau de 3 jours. Seules les personnes ayant déjà un profil peuvent en envoyer, jusqu'à 3 suggestions en attente d'examen.",
+ "Código de edição": "Code de modification",
+ "Sua sugestão (20 a 1000 caracteres)": "Votre suggestion (20 à 1000 caractères)",
+ "Sua sugestão fica ligada ao seu perfil só para conceder o convite, e é apagada se você excluir o perfil.": "Votre suggestion est liée à votre profil uniquement pour accorder l'invitation, et elle est supprimée si vous supprimez le profil.",
+ "Enviar sugestão": "Envoyer la suggestion",
+ "Sugestão enviada. Se for aceita, você ganha um convite extra.": "Suggestion envoyée. Si elle est acceptée, vous gagnez une invitation supplémentaire.",
+ "Gamertag ou código de edição incorretos.": "Gamertag ou code de modification incorrects.",
+ "Escreva pelo menos 20 caracteres.": "Écrivez au moins 20 caractères.",
+ "Você já tem 3 sugestões esperando análise.": "Vous avez déjà 3 suggestions en attente d'examen.",
+ "Sugestões | PirateBoard": "Suggestions | PirateBoard",
+ "Envie uma sugestão de melhoria para o PirateBoard e ganhe um convite extra se ela for aceita.": "Envoyez une suggestion d'amélioration pour PirateBoard et gagnez une invitation supplémentaire si elle est acceptée."
  },
  "it": {
  "Código aberto para conferir": "Codice aperto da verificare",
@@ -943,7 +979,19 @@
  "Selo verificado (em breve)": "Badge verificato (prossimamente)",
  "O selo “Verificado” indicará que a pessoa participa da comunidade no Discord e usou o código de convite do cadastro. Ele não prova que os números do jogo são reais. Perfis verificados poderão usar o widget para OBS, uma página só com os seus números.": "Il badge «Verificato» indicherà che la persona partecipa alla comunità su Discord e ha usato il codice di invito della registrazione. Non prova che i numeri del gioco siano reali. I profili verificati potranno usare il widget per OBS, una pagina con i soli loro numeri.",
  "Qualquer pessoa pode denunciar um perfil ou contestar dados na página Denunciar. Podemos ocultar um perfil de forma preventiva, analisá-lo, excluí-lo e, se necessário, revogar convites de quem o convidou. Quem for impedido de usar uma gamertag pode reivindicá-la por denúncia; a titularidade é confirmada por mensagem enviada pelo Xbox, a partir dessa gamertag, para Veetones.": "Chiunque può segnalare un profilo o contestare dei dati nella pagina Segnala. Possiamo nascondere un profilo in via preventiva, esaminarlo, eliminarlo e, se necessario, revocare gli inviti di chi lo ha invitato. Chi non può usare il proprio gamertag può rivendicarlo con una segnalazione; la titolarità viene confermata da un messaggio inviato tramite Xbox, da quel gamertag, a Veetones.",
- "Para confirmar que a gamertag é sua, envie uma mensagem pelo Xbox, a partir dela, para Veetones. O perfil continua como está até a análise terminar.": "Per confermare che il gamertag è tuo, invia un messaggio tramite Xbox, da esso, a Veetones. Il profilo resta com'è fino alla fine dell'esame."
+ "Para confirmar que a gamertag é sua, envie uma mensagem pelo Xbox, a partir dela, para Veetones. O perfil continua como está até a análise terminar.": "Per confermare che il gamertag è tuo, invia un messaggio tramite Xbox, da esso, a Veetones. Il profilo resta com'è fino alla fine dell'esame.",
+ "Sugestões": "Suggerimenti",
+ "Tem uma ideia para o PirateBoard? Cada sugestão nova que for aceita garante a você um código de convite adicional, que vale mesmo antes da próxima vaga de 3 dias. Só quem já tem perfil pode enviar, até 3 sugestões esperando análise.": "Hai un'idea per PirateBoard? Ogni nuovo suggerimento accettato ti garantisce un codice di invito aggiuntivo, valido anche prima del prossimo slot di 3 giorni. Possono inviare solo le persone che hanno già un profilo, fino a 3 suggerimenti in attesa di esame.",
+ "Código de edição": "Codice di modifica",
+ "Sua sugestão (20 a 1000 caracteres)": "Il tuo suggerimento (da 20 a 1000 caratteri)",
+ "Sua sugestão fica ligada ao seu perfil só para conceder o convite, e é apagada se você excluir o perfil.": "Il tuo suggerimento è legato al profilo solo per concedere l'invito e viene cancellato se elimini il profilo.",
+ "Enviar sugestão": "Invia suggerimento",
+ "Sugestão enviada. Se for aceita, você ganha um convite extra.": "Suggerimento inviato. Se accettato, ottieni un invito extra.",
+ "Gamertag ou código de edição incorretos.": "Gamertag o codice di modifica errati.",
+ "Escreva pelo menos 20 caracteres.": "Scrivi almeno 20 caratteri.",
+ "Você já tem 3 sugestões esperando análise.": "Hai già 3 suggerimenti in attesa di esame.",
+ "Sugestões | PirateBoard": "Suggerimenti | PirateBoard",
+ "Envie uma sugestão de melhoria para o PirateBoard e ganhe um convite extra se ela for aceita.": "Invia un suggerimento di miglioramento per PirateBoard e ottieni un invito extra se viene accettato."
  }
  };
   var LOCALES = { pt: 'pt-BR', es: 'es', en: 'en', fr: 'fr', it: 'it' };
