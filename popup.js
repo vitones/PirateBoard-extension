@@ -13,7 +13,7 @@ function say(msg, kind) {
 
 window.addEventListener('error', function (e) { say('Erro: ' + e.message, 'err'); });
 
-function fmt(n) { return Number(n).toLocaleString(LANG === 'es' ? 'es' : 'pt-BR'); }
+function fmt(n) { return Number(n).toLocaleString(LOCALE); }
 
 var COMPANY_LABEL = {
   gold_hoarders: 'Acumuladores de Ouro', merchant_alliance: 'Aliança Mercante', order_of_souls: 'Ordem das Almas',
