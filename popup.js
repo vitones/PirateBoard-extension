@@ -1,6 +1,15 @@
 // Endereco da API: preview na Cloudflare (ver host_permissions no manifest); para o ambiente local use http://127.0.0.1:8799.
 var API = 'https://pirateboard.veetones.workers.dev';
 var snapshot = null;
+
+// Todos os paises; o padrao e o pais do idioma do navegador (ex.: pt-BR -> BR), se existir.
+(function () {
+  var sel = document.getElementById('country');
+  var none = document.createElement('option'); none.value = ''; none.textContent = T('Escolha o país'); sel.appendChild(none);
+  window.fillCountries(sel);
+  var m = /-([A-Za-z]{2})$/.exec(navigator.language || '');
+  if (m && window.COUNTRY_CODES.indexOf(m[1].toUpperCase()) !== -1) sel.value = m[1].toUpperCase();
+})();
 var gamertag = null;
 var sending = false;
 
@@ -65,7 +74,7 @@ var hasToken = false;
 
 function update() {
   var needInvite = !hasToken && !$('invite').value.trim();
-  $('send').disabled = sending || !(snapshot && $('terms').checked) || needInvite;
+  $('send').disabled = sending || !(snapshot && $('terms').checked && $('country').value) || needInvite;
   $('invite').hidden = !snapshot;
   $('invites').hidden = !hasToken;
 }
@@ -188,6 +197,8 @@ async function fetchPow() {
   var c = await r.json();
   return { nonce: c.nonce, ts: c.ts, sig: c.sig, counter: await solvePow(c) };
 }
+
+$('country').addEventListener('change', update);
 
 $('send').addEventListener('click', function () {
   sending = true;
