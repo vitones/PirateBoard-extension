@@ -6,7 +6,7 @@ Este repositório existe para que qualquer pessoa possa conferir, linha por linh
 
 ## O que ela faz
 
-1. Quando você abre as páginas **Visão geral**, **Capitania** e **Reputação** do seu perfil em `seaofthieves.com`, ela lê o **texto que aparece na tela** (gamertag, nível, ouro, metas, nível de reputação nas companhias).
+1. Quando você abre as páginas **Visão geral**, **Capitania**, **Reputação** e, se quiser, **Temporadas** do seu perfil em `seaofthieves.com`, ela lê o **texto que aparece na tela** e o valor exato das moedas (gamertag, Moedas Antigas, ouro, metas, título, Renome, nível de reputação nas companhias).
 2. No painel (ícone da extensão) ela mostra **exatamente o que será enviado**, inclusive o JSON bruto.
 3. **Só envia quando você aceita os termos e clica em Enviar.** Nada é enviado sozinho.
 
@@ -15,7 +15,7 @@ Este repositório existe para que qualquer pessoa possa conferir, linha por linh
 - Não lê cookies, senhas, tokens de login nem dados da sua conta Xbox ou Microsoft.
 - Não faz nenhuma requisição ao site do jogo; só lê a página que você mesmo abriu.
 - Não clica, não navega e não automatiza nada.
-- Não lê o baú, as guildas nem outras páginas além das três acima.
+- Não lê o baú, os amigos, as guildas, o teste de personalidade nem outras páginas além das quatro acima.
 - Não envia nada para ninguém além do servidor do PirateBoard.
 
 ## Permissões do `manifest.json`

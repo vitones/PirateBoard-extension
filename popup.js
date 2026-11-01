@@ -39,7 +39,7 @@ function row(dl, label, value) {
 function render(parts) {
   snapshot = PBParse.buildSnapshot(parts);
   gamertag = parts.header ? parts.header.gamertag : null;
-  $('who').textContent = gamertag || '';
+  $('who').textContent = gamertag ? gamertag + (parts.header.title ? ' · ' + parts.header.title : '') : '';
   document.querySelectorAll('#steps li').forEach(function (li) {
     li.classList.toggle('done', !!parts[li.getAttribute('data-key')]);
   });
@@ -49,7 +49,8 @@ function render(parts) {
   if (snapshot) {
     var stats = $('stats');
     stats.textContent = '';
-    [[T('Nível'), snapshot.level], [T('Ouro'), snapshot.gold], ['Metas de Pirata', snapshot.pirateGoals], [T('Metas de Navio'), snapshot.shipGoals]]
+    [[T('Moedas Antigas'), snapshot.ancientCoins], [T('Ouro'), snapshot.gold], ['Metas de Pirata', snapshot.pirateGoals], [T('Metas de Navio'), snapshot.shipGoals]]
+      .concat(snapshot.renown != null ? [[T('Renome'), snapshot.renown]] : [])
       .forEach(function (s) {
         var d = document.createElement('div'); d.className = 'stat';
         var b = document.createElement('b'); b.textContent = fmt(s[1]);

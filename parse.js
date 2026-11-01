@@ -1,6 +1,6 @@
 // Leitura do texto VISIVEL das paginas do perfil (docs/formato-do-perfil.md).
 // Funcoes puras: recebem o texto da pagina e devolvem so numeros e chaves.
-// Nunca le cookie, storage da pagina, rede nem itens do bau.
+// Nunca le cookie, storage da pagina nem rede.
 (function (root) {
   var COMPANY_NAMES = {
     gold_hoarders: ['Acumuladores de Ouro', 'Gold Hoarders'],
@@ -25,6 +25,25 @@
     if (typeof s !== 'string' || !/^\d[\d.,]*$/.test(s)) return null;
     var n = Number(s.replace(/[.,]/g, ''));
     return Number.isSafeInteger(n) ? n : null;
+  }
+
+  // Valor exato das moedas: o atributo title do elemento (ex.: "22.356.537"). O numero visivel e animado.
+  function parseCoinTitle(s) {
+    var m = /^\s*(\d[\d.,]*\d|\d)/.exec(String(s || ''));
+    return m ? toInt(m[1]) : null;
+  }
+
+  // Renome: inteiro de 0 a 1000 ou null.
+  function parseRenown(s) {
+    var m = /^\s*(\d{1,4})\s*$/.exec(String(s || ''));
+    var n = m ? Number(m[1]) : null;
+    return n !== null && n <= 1000 ? n : null;
+  }
+
+  // Titulo exibido no perfil: texto simples de ate 40 caracteres, ou null.
+  function cleanTitle(s) {
+    var t = String(s || '').replace(/\s+/g, ' ').trim();
+    return /^[A-Za-z\u00C0-\u024F0-9][A-Za-z\u00C0-\u024F0-9 '\u2019:.,!-]{0,39}$/.test(t) ? t : null;
   }
 
   // Cabecalho comum a todas as paginas: gamertag, titulo, nivel, "x/y", ouro.
@@ -116,18 +135,24 @@
 
   function buildSnapshot(parts) {
     if (!parts || !parts.header || !parts.captaincy || !parts.reputation || !parts.reputation.length) return null;
-    return {
+    var snap = {
       version: 1,
-      level: parts.header.level,
+      ancientCoins: parts.header.level, // Moedas Antigas
       gold: parts.header.gold,
       pirateGoals: parts.captaincy.pirateGoals,
       shipGoals: parts.captaincy.shipGoals,
       reputation: parts.reputation,
     };
+    if (parts.header.title) snap.title = parts.header.title;
+    if (parts.seasons && typeof parts.seasons.renown === 'number') snap.renown = parts.seasons.renown;
+    return snap;
   }
 
   var api = {
     parseHeader: parseHeader,
+    parseCoinTitle: parseCoinTitle,
+    parseRenown: parseRenown,
+    cleanTitle: cleanTitle,
     parseCaptaincy: parseCaptaincy,
     parseReputation: parseReputation,
     buildSnapshot: buildSnapshot,
