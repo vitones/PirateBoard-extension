@@ -1,6 +1,9 @@
 (function () {
   // Dicionario PT -> ES. O texto original das paginas e em portugues; aqui so entra a traducao.
   var ES = {
+    'Código aberto para conferir': 'Código abierto para verificar',
+    'O código da extensão é público para auditoria:': 'El código de la extensión es público para auditoría:',
+    '. Lá você vê as permissões e tudo o que ela lê e envia.': '. Allí ves los permisos y todo lo que lee y envía.',
     'Falha de segurança (não publique detalhes sensíveis)': 'Falla de seguridad (no publiques detalles sensibles)',
     'Quem manda nos': 'Quién manda en los', 'mares do Sul': 'mares del Sur',
     "Denunciar": "Denunciar",
