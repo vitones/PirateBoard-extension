@@ -128,7 +128,10 @@
  "Reputação em ": "Reputación en ",
  " companhias": " compañías",
  "Paraguai": "Paraguay",
- "Suriname": "Surinam"
+ "Suriname": "Surinam",
+ "Metas de Pirata": "Metas de Pirata",
+ "Pirata": "Pirata",
+ "País": "País"
  },
  "en": {
  "Código aberto para conferir": "Open source to verify",
@@ -257,7 +260,10 @@
  "Reputação em ": "Reputation with ",
  " companhias": " companies",
  "Paraguai": "Paraguay",
- "Suriname": "Suriname"
+ "Suriname": "Suriname",
+ "Metas de Pirata": "Pirate Milestones",
+ "Pirata": "Pirate",
+ "País": "Country"
  },
  "fr": {
  "Código aberto para conferir": "Code source ouvert, à vérifier",
@@ -386,7 +392,10 @@
  "Reputação em ": "Réputation auprès de ",
  " companhias": " compagnies",
  "Paraguai": "Paraguay",
- "Suriname": "Suriname"
+ "Suriname": "Suriname",
+ "Metas de Pirata": "Objectifs de Pirate",
+ "Pirata": "Pirate",
+ "País": "Pays"
  },
  "it": {
  "Código aberto para conferir": "Codice aperto da verificare",
@@ -515,7 +524,10 @@
  "Reputação em ": "Reputazione nelle ",
  " companhias": " compagnie",
  "Paraguai": "Paraguay",
- "Suriname": "Suriname"
+ "Suriname": "Suriname",
+ "Metas de Pirata": "Traguardi da Pirata",
+ "Pirata": "Pirata",
+ "País": "Paese"
  }
  };
   var LOCALES = { pt: 'pt-BR', es: 'es', en: 'en', fr: 'fr', it: 'it' };
