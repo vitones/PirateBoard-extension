@@ -113,7 +113,7 @@ chrome.storage.onChanged.addListener(function (changes) { if (changes.parts) ref
 var MESSAGES = {
   'uma atualizacao por dia': T('Você já enviou hoje. Tente de novo em 24 horas.'),
   'token invalido': T('Esta gamertag já foi cadastrada em outro navegador. Sem o token, não dá para atualizar.'),
-  'gamertag ja cadastrada': T('Esta gamertag já está cadastrada.'),
+  'gamertag ja cadastrada': T('Esta gamertag já foi cadastrada em outro navegador. Sem o token, não dá para atualizar.'),
   'dados implausiveis': T('Os números mudaram demais desde o último envio e foram recusados.'),
   'muitas requisicoes': T('Muitas tentativas. Espere um minuto.'),
   'convite necessario': T('Para criar o perfil é preciso um código de convite de quem já participa.'),
