@@ -531,7 +531,7 @@
   window.LOCALE = LOCALES[lang];
   window.T = function (pt) { return D && D[pt] ? D[pt] : pt; };
 
-  function norm(s) { return s.replace(/s+/g, ' ').trim(); }
+  function norm(s) { return s.replace(/\s+/g, ' ').trim(); }
   if (D) {
     document.documentElement.lang = lang;
     var w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT), n, nodes = [];
@@ -539,7 +539,7 @@
     nodes.forEach(function (t) {
       if (!t.parentNode || /^(SCRIPT|STYLE)$/.test(t.parentNode.nodeName)) return;
       var r = D[norm(t.nodeValue)];
-      if (r) t.nodeValue = t.nodeValue.match(/^s*/)[0] + r + t.nodeValue.match(/s*$/)[0];
+      if (r) t.nodeValue = t.nodeValue.match(/^\s*/)[0] + r + t.nodeValue.match(/\s*$/)[0];
     });
     document.querySelectorAll('[placeholder],[aria-label]').forEach(function (e) {
       ['placeholder', 'aria-label'].forEach(function (a) { var v = e.getAttribute(a); if (v && D[v]) e.setAttribute(a, D[v]); });
