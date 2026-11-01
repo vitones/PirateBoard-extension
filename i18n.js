@@ -162,7 +162,20 @@
  "Entrar no ranking": "Entrar al ranking",
  "Quer aparecer aqui? Instale a extensão e envie o seu perfil.": "¿Quieres aparecer aquí? Instala la extensión y envía tu perfil.",
  "Ir para o conteúdo": "Ir al contenido",
- "Idioma": "Idioma"
+ "Idioma": "Idioma",
+ "Buscar gamertag": "Buscar gamertag",
+ "Ordenar por": "Ordenar por",
+ "Perfil": "Perfil",
+ "Perfil | PirateBoard": "Perfil | PirateBoard",
+ "Enviar": "Enviar",
+ "Reputação em": "Reputación en",
+ "companhias": "compañías",
+ "Convite (vale 14 dias, uso único):": "Invitación (vale 14 días, un solo uso):",
+ "Você já gerou um convite. O próximo sai em": "Ya generaste una invitación. La próxima sale en",
+ "dia(s).": "día(s).",
+ "Não foi possível gerar:": "No se pudo generar:",
+ "Não enviado:": "No enviado:",
+ "para quem prefere não instalar a extensão (os números ficam marcados como não verificados).": "para quien prefiere no instalar la extensión (los números quedan marcados como no verificados)."
  },
  "en": {
  "Código aberto para conferir": "Open source to verify",
@@ -325,7 +338,20 @@
  "Entrar no ranking": "Join the leaderboard",
  "Quer aparecer aqui? Instale a extensão e envie o seu perfil.": "Want to show up here? Install the extension and send your profile.",
  "Ir para o conteúdo": "Skip to content",
- "Idioma": "Language"
+ "Idioma": "Language",
+ "Buscar gamertag": "Search gamertag",
+ "Ordenar por": "Sort by",
+ "Perfil": "Profile",
+ "Perfil | PirateBoard": "Profile | PirateBoard",
+ "Enviar": "Send",
+ "Reputação em": "Reputation in",
+ "companhias": "companies",
+ "Convite (vale 14 dias, uso único):": "Invite (valid for 14 days, single use):",
+ "Você já gerou um convite. O próximo sai em": "You already generated an invite. The next one is available in",
+ "dia(s).": "day(s).",
+ "Não foi possível gerar:": "Could not generate:",
+ "Não enviado:": "Not sent:",
+ "para quem prefere não instalar a extensão (os números ficam marcados como não verificados).": "for those who prefer not to install the extension (the numbers are marked as unverified)."
  },
  "fr": {
  "Código aberto para conferir": "Code source ouvert, à vérifier",
@@ -488,7 +514,20 @@
  "Entrar no ranking": "Rejoindre le classement",
  "Quer aparecer aqui? Instale a extensão e envie o seu perfil.": "Envie d'apparaître ici ? Installez l'extension et envoyez votre profil.",
  "Ir para o conteúdo": "Aller au contenu",
- "Idioma": "Langue"
+ "Idioma": "Langue",
+ "Buscar gamertag": "Rechercher un gamertag",
+ "Ordenar por": "Trier par",
+ "Perfil": "Profil",
+ "Perfil | PirateBoard": "Profil | PirateBoard",
+ "Enviar": "Envoyer",
+ "Reputação em": "Réputation chez",
+ "companhias": "compagnies",
+ "Convite (vale 14 dias, uso único):": "Invitation (valable 14 jours, usage unique) :",
+ "Você já gerou um convite. O próximo sai em": "Vous avez déjà généré une invitation. La prochaine sera disponible dans",
+ "dia(s).": "jour(s).",
+ "Não foi possível gerar:": "Impossible de générer :",
+ "Não enviado:": "Non envoyé :",
+ "para quem prefere não instalar a extensão (os números ficam marcados como não verificados).": "pour ceux qui préfèrent ne pas installer l'extension (les chiffres sont marqués comme non vérifiés)."
  },
  "it": {
  "Código aberto para conferir": "Codice aperto da verificare",
@@ -651,7 +690,20 @@
  "Entrar no ranking": "Entra in classifica",
  "Quer aparecer aqui? Instale a extensão e envie o seu perfil.": "Vuoi comparire qui? Installa l'estensione e invia il tuo profilo.",
  "Ir para o conteúdo": "Vai al contenuto",
- "Idioma": "Lingua"
+ "Idioma": "Lingua",
+ "Buscar gamertag": "Cerca gamertag",
+ "Ordenar por": "Ordina per",
+ "Perfil": "Profilo",
+ "Perfil | PirateBoard": "Profilo | PirateBoard",
+ "Enviar": "Invia",
+ "Reputação em": "Reputazione in",
+ "companhias": "compagnie",
+ "Convite (vale 14 dias, uso único):": "Invito (valido 14 giorni, monouso):",
+ "Você já gerou um convite. O próximo sai em": "Hai già generato un invito. Il prossimo sarà disponibile tra",
+ "dia(s).": "giorno/i.",
+ "Não foi possível gerar:": "Impossibile generare:",
+ "Não enviado:": "Non inviato:",
+ "para quem prefere não instalar a extensão (os números ficam marcados como não verificados).": "per chi preferisce non installare l'estensione (i numeri vengono contrassegnati come non verificati)."
  }
  };
   var LOCALES = { pt: 'pt-BR', es: 'es', en: 'en', fr: 'fr', it: 'it' };
