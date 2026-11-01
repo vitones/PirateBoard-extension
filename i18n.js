@@ -160,7 +160,9 @@
  "jogadores": "jugadores",
  "países": "países",
  "Entrar no ranking": "Entrar al ranking",
- "Quer aparecer aqui? Instale a extensão e envie o seu perfil.": "¿Quieres aparecer aquí? Instala la extensión y envía tu perfil."
+ "Quer aparecer aqui? Instale a extensão e envie o seu perfil.": "¿Quieres aparecer aquí? Instala la extensión y envía tu perfil.",
+ "Ir para o conteúdo": "Ir al contenido",
+ "Idioma": "Idioma"
  },
  "en": {
  "Código aberto para conferir": "Open source to verify",
@@ -321,7 +323,9 @@
  "jogadores": "players",
  "países": "countries",
  "Entrar no ranking": "Join the leaderboard",
- "Quer aparecer aqui? Instale a extensão e envie o seu perfil.": "Want to show up here? Install the extension and send your profile."
+ "Quer aparecer aqui? Instale a extensão e envie o seu perfil.": "Want to show up here? Install the extension and send your profile.",
+ "Ir para o conteúdo": "Skip to content",
+ "Idioma": "Language"
  },
  "fr": {
  "Código aberto para conferir": "Code source ouvert, à vérifier",
@@ -482,7 +486,9 @@
  "jogadores": "joueurs",
  "países": "pays",
  "Entrar no ranking": "Rejoindre le classement",
- "Quer aparecer aqui? Instale a extensão e envie o seu perfil.": "Envie d'apparaître ici ? Installez l'extension et envoyez votre profil."
+ "Quer aparecer aqui? Instale a extensão e envie o seu perfil.": "Envie d'apparaître ici ? Installez l'extension et envoyez votre profil.",
+ "Ir para o conteúdo": "Aller au contenu",
+ "Idioma": "Langue"
  },
  "it": {
  "Código aberto para conferir": "Codice aperto da verificare",
@@ -643,7 +649,9 @@
  "jogadores": "giocatori",
  "países": "paesi",
  "Entrar no ranking": "Entra in classifica",
- "Quer aparecer aqui? Instale a extensão e envie o seu perfil.": "Vuoi comparire qui? Installa l'estensione e invia il tuo profilo."
+ "Quer aparecer aqui? Instale a extensão e envie o seu perfil.": "Vuoi comparire qui? Installa l'estensione e invia il tuo profilo.",
+ "Ir para o conteúdo": "Vai al contenuto",
+ "Idioma": "Lingua"
  }
  };
   var LOCALES = { pt: 'pt-BR', es: 'es', en: 'en', fr: 'fr', it: 'it' };
@@ -677,20 +685,46 @@
     if (D[document.title]) document.title = D[document.title];
   }
 
-  // Seletor de idioma: no cabecalho (site) ou ao lado do nome (extensao). Mostra os outros idiomas.
+  // Seletor de idioma. Site: lista com todos os idiomas no rodape, o atual marcado. Extensao: codigos ao lado do nome.
+  function choose(code, e) {
+    e.preventDefault();
+    try { localStorage.setItem('lang', code); } catch (x) {}
+    location.reload();
+  }
+  var foot = document.querySelector('footer');
   var host = document.querySelector('nav') || document.querySelector('header');
-  if (host) {
+  if (foot && !document.querySelector('header')) {
+    var nav2 = document.createElement('nav');
+    nav2.className = 'langs';
+    nav2.setAttribute('aria-label', D && D['Idioma'] ? D['Idioma'] : 'Idioma');
+    var ul = document.createElement('ul');
+    Object.keys(LOCALES).forEach(function (code) {
+      var li = document.createElement('li');
+      if (code === lang) {
+        var cur = document.createElement('span');
+        cur.textContent = NAMES[code];
+        cur.setAttribute('aria-current', 'true');
+        li.appendChild(cur);
+      } else {
+        var a2 = document.createElement('a');
+        a2.href = '#';
+        a2.lang = LOCALES[code];
+        a2.textContent = NAMES[code];
+        a2.addEventListener('click', function (e) { choose(code, e); });
+        li.appendChild(a2);
+      }
+      ul.appendChild(li);
+    });
+    nav2.appendChild(ul);
+    foot.appendChild(nav2);
+  } else if (host) {
     Object.keys(LOCALES).forEach(function (code) {
       if (code === lang) return;
       var b = document.createElement('a');
       b.href = '#';
       b.textContent = code.toUpperCase();
       b.setAttribute('aria-label', NAMES[code]);
-      b.addEventListener('click', function (e) {
-        e.preventDefault();
-        try { localStorage.setItem('lang', code); } catch (x) {}
-        location.reload();
-      });
+      b.addEventListener('click', function (e) { choose(code, e); });
       host.appendChild(b);
     });
   }
