@@ -177,6 +177,17 @@
     return { parts: parts, missing: missing };
   }
 
+  // Teto de tamanho da resposta (T-API-2): recusa antes de interpretar; o endpoint vira 'formato'.
+  var MAX_BYTES = 1000000;
+  async function readJson(res) {
+    var declared = Number(res.headers && res.headers.get && res.headers.get('content-length'));
+    if (declared > MAX_BYTES) throw new Error('grande');
+    if (typeof res.text !== 'function') return res.json();
+    var txt = await res.text();
+    if (txt.length > MAX_BYTES) throw new Error('grande');
+    return JSON.parse(txt);
+  }
+
   function delay(ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
 
   // Le os 4 endpoints em sequencia, sem paralelismo. Para na primeira recusa (401/403/429);
@@ -206,7 +217,7 @@
       if (res.status === 401 || res.status === 403) { stopAt(i); return { data: data, error: 'sessao' }; }
       if (res.status === 429) { stopAt(i); return { data: data, error: 'limite' }; }
       if (!res.ok) { failed.push(ENDPOINTS[i]); step(ENDPOINTS[i], 'erro'); first = first || 'rede'; continue; }
-      try { data[ENDPOINTS[i]] = await res.json(); step(ENDPOINTS[i], 'ok'); } catch (e) { failed.push(ENDPOINTS[i]); step(ENDPOINTS[i], 'erro'); first = first || 'formato'; }
+      try { data[ENDPOINTS[i]] = await readJson(res); step(ENDPOINTS[i], 'ok'); } catch (e) { failed.push(ENDPOINTS[i]); step(ENDPOINTS[i], 'erro'); first = first || 'formato'; }
     }
     // So falha de vez se nada foi lido; senao devolve o que veio e a lista do que faltou.
     return { data: data, error: failed.length === ENDPOINTS.length ? first : null, failed: failed };
