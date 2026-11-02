@@ -22,3 +22,21 @@ jobs:
         with:
           node-version: 22
       - run: node scripts/verificar.mjs
+
+  empacotar:
+    needs: verificar
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - name: Gerar o ZIP e o SHA-256
+        run: |
+          v=$(node -p "require('./manifest.json').version")
+          mkdir -p dist
+          zip -X -r "dist/pirateboard-extensao-$v.zip" manifest.json api.js content.js countries.js i18n.js parse.js popup.html popup.css popup.js icons
+          (cd dist && sha256sum "pirateboard-extensao-$v.zip" | tee SHA256SUMS)
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: pirateboard-extensao
+          path: dist/
+          if-no-files-found: error
