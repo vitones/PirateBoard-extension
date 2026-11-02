@@ -36,10 +36,27 @@ Não há `cookies`, `tabs` amplo, `webRequest`, `history` nem `<all_urls>`.
 - `popup.js` mostra os dados e faz o envio (`fetch` para a API do PirateBoard, sem cookies).
 - Procure por `fetch(`, `cookie`, `XMLHttpRequest` e `chrome.` para ver tudo o que sai ou é guardado.
 
-## Instalar manualmente
+## Instalar a partir do repositório
 
-1. Baixe este repositório (uso pessoal).
-2. Chrome, Edge ou Opera: abra `chrome://extensions` (ou `opera://extensions`), ative o modo desenvolvedor e use "Carregar sem compactação" apontando para esta pasta.
+Serve para Chrome, Edge, Opera, Opera GX, Brave e outros navegadores baseados no Chromium. Use a versão da branch `main`; ela é sempre a mesma publicada nas lojas.
+
+1. **Baixe o código.** Em *Code > Download ZIP* (ou `git clone`) e, se baixou o ZIP, extraia em uma pasta fixa. Não apague nem mova a pasta depois: o navegador lê os arquivos direto dela.
+2. **Abra a página de extensões:**
+   - Chrome: `chrome://extensions`
+   - Edge: `edge://extensions`
+   - Opera e Opera GX: `opera://extensions`
+   - Brave: `brave://extensions`
+3. **Ative o "Modo do desenvolvedor"** (interruptor no canto da página).
+4. Clique em **"Carregar sem compactação"** (Opera: "Carregar descompactada") e escolha a pasta que contém o arquivo `manifest.json`.
+5. Fixe o ícone do PirateBoard na barra do navegador e abra seu perfil em `seaofthieves.com`.
+
+**Atualizar:** baixe o repositório de novo, substitua os arquivos da pasta e clique em "Recarregar" no cartão da extensão.
+
+**Remover:** na mesma página, clique em "Remover". Os dados guardados pela extensão saem junto.
+
+**Aviso de "extensões do modo desenvolvedor":** é normal para quem instala assim; some ao instalar pela loja.
+
+**Conferir antes de instalar:** compare as permissões do `manifest.json` com a tabela acima e leia `content.js`, `parse.js` e `popup.js`.
 
 ## Segurança
 
