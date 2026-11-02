@@ -23,9 +23,12 @@ Este repositório existe para que qualquer pessoa possa conferir, linha por linh
 | Permissão | Para quê |
 |---|---|
 | `storage` | Guardar no navegador a leitura atual e o código de edição do seu perfil. |
+| `activeTab` | Só na aba que você está vendo, quando você usa a extensão, para a leitura opcional pela API do próprio site. |
 | Site `seaofthieves.com/*/profile/*` | Ler o texto das páginas de perfil que você abriu. |
 | Site `pirateboard.veetones.workers.dev` | Enviar os números que você confirmou. |
 | `127.0.0.1:8799` | Só para desenvolvimento local; pode ser removida da sua cópia. |
+
+A **leitura opcional pela API** só acontece se você pedir: são 4 consultas GET a `www.seaofthieves.com/api/profilev2/` (saldo, reputação, capitania e baú), com a sua própria sessão do navegador, com pausa entre elas, e ela para na primeira recusa. Nada disso é enviado sem a sua confirmação.
 
 Não há `cookies`, `tabs` amplo, `webRequest`, `history` nem `<all_urls>`.
 

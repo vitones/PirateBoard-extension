@@ -1,6 +1,7 @@
 // Endereco da API: producao na Cloudflare (ver host_permissions no manifest). Para testar localmente, troque pela porta do wrangler dev e nao publique assim.
 var API = 'https://pirateboard.veetones.workers.dev';
 var snapshot = null;
+var sync = null; // progresso da leitura pela API (gravado pela pagina do jogo)
 
 // Todos os paises; o padrao e o pais do idioma do navegador (ex.: pt-BR -> BR), se existir.
 (function () {
@@ -49,6 +50,7 @@ function render(parts) {
   });
 
   $('review').hidden = !snapshot;
+  $('review').classList.toggle('api-mode', !!(sync && sync.state === 'fim' && !sync.error));
   $('hint').hidden = !!snapshot;
   if (snapshot) {
     var stats = $('stats');
@@ -123,24 +125,62 @@ function refresh() {
   chrome.storage.local.get('parts', function (res) { render(res.parts || {}); });
 }
 
-document.querySelectorAll('#steps a').forEach(function (a) {
+document.querySelectorAll('#steps a, .legal a').forEach(function (a) {
   a.addEventListener('click', function (e) {
     e.preventDefault();
     chrome.tabs.create({ url: a.getAttribute('data-url') });
   });
 });
 
+$('changelog').addEventListener('click', function (e) {
+  e.preventDefault();
+  chrome.tabs.create({ url: this.getAttribute('data-url') });
+});
+
 $('terms').addEventListener('change', update);
 $('invite').addEventListener('input', update);
 $('clear').addEventListener('click', function () {
-  chrome.storage.local.remove('parts', refresh);
+  chrome.storage.local.remove(['parts', 'apiProgress'], function () { sync = null; renderSync(); refresh(); });
 });
 
 // Reflete leituras novas enquanto o popup esta aberto.
-chrome.storage.onChanged.addListener(function (changes) { if (changes.parts) refresh(); });
+chrome.storage.onChanged.addListener(function (changes) {
+  if (changes.apiProgress) { sync = changes.apiProgress.newValue || null; renderSync(); }
+  if (changes.parts) refresh();
+});
+
+// Barra e lista da sincronizacao: verde = sincronizado, vermelho = erro. Estado em texto e icone, nao so em cor.
+var SYNC_LABEL = { balance: 'Saldo', reputation: 'Reputação', captaincy: 'Capitania e metas', chest: 'Baú' };
+var SYNC_STATE = { espera: ['wait', '\u2022', 'Aguardando'], lendo: ['run', '\u21BB', 'Sincronizando'], ok: ['ok', '\u2713', 'Sincronizado'], erro: ['err', '\u2715', 'Erro'] };
+function renderSync() {
+  var box = $('sync');
+  if (!sync || !sync.items) { box.hidden = true; $('review').classList.remove('api-mode'); return; }
+  var keys = Object.keys(SYNC_LABEL), ok = 0, bad = 0;
+  var list = $('sync-list');
+  list.textContent = '';
+  keys.forEach(function (k) {
+    var s = SYNC_STATE[sync.items[k]] || SYNC_STATE.espera;
+    if (sync.items[k] === 'ok') ok++;
+    if (sync.items[k] === 'erro') bad++;
+    var li = document.createElement('li'); li.className = s[0];
+    var ic = document.createElement('span'); ic.setAttribute('aria-hidden', 'true'); ic.textContent = s[1];
+    var nm = document.createElement('span'); nm.textContent = T(SYNC_LABEL[k]);
+    var st = document.createElement('span'); st.textContent = T(s[2]);
+    li.appendChild(ic); li.appendChild(nm); li.appendChild(st);
+    list.appendChild(li);
+  });
+  var pct = Math.round(((ok + bad) / keys.length) * 100);
+  $('bar-fill').style.width = pct + '%';
+  $('bar-fill').className = bad ? 'has-err' : '';
+  box.querySelector('.bar').setAttribute('aria-valuenow', String(pct));
+  $('sync-summary').textContent = ok + ' ' + T('de') + ' ' + keys.length + ' ' + T('sincronizados') + (bad ? ' · ' + bad + ' ' + T('com erro') : '');
+  box.hidden = false;
+  $('review').classList.toggle('api-mode', sync.state === 'fim' && !sync.error);
+}
+chrome.storage.local.get('apiProgress', function (res) { sync = res.apiProgress || null; renderSync(); });
 
 var MESSAGES = {
-  'uma atualizacao por dia': T('Você já enviou hoje. Tente de novo em 24 horas.'),
+  'aguarde para enviar': T('Aguarde alguns minutos antes de enviar de novo.'),
   'token invalido': T('Esta gamertag já foi cadastrada em outro navegador. Sem o token, não dá para atualizar.'),
   'gamertag ja cadastrada': T('Esta gamertag já foi cadastrada em outro navegador. Sem o token, não dá para atualizar.'),
   'dados implausiveis': T('Os números mudaram demais desde o último envio e foram recusados.'),
@@ -229,11 +269,19 @@ async function fetchPow() {
 
 $('country').addEventListener('change', update);
 
+var SEND_COOLDOWN = 0; // sem limite de envio (2026-11-02, testes)
 $('send').addEventListener('click', function () {
   sending = true;
   update();
-  chrome.storage.local.get('tokens', function (res) {
+  chrome.storage.local.get(['tokens', 'sentAt'], function (res) {
     var tokens = res.tokens || {};
+    var sentAt = res.sentAt || {};
+    var wait = (sentAt[gamertag] || 0) + SEND_COOLDOWN - Date.now();
+    if (wait > 0) {
+      say(T('Aguarde um pouco antes de enviar de novo. Próximo envio em ') + Math.ceil(wait / 60000) + T(' min.'), 'err');
+      sending = false; update();
+      return;
+    }
     var needPow = !tokens[gamertag]; // so a criacao do perfil exige o desafio
     say(needPow ? T('Verificando (alguns segundos)...') : T('Enviando...'));
     (needPow ? fetchPow() : Promise.resolve(undefined))
@@ -258,6 +306,8 @@ $('send').addEventListener('click', function () {
       .then(function (x) {
         if (x.ok) {
           if (x.j.token) { tokens[gamertag] = x.j.token; chrome.storage.local.set({ tokens: tokens }, syncToken); }
+          sentAt[gamertag] = Date.now();
+          chrome.storage.local.set({ sentAt: sentAt });
           say(T('Enviado! Próxima atualização em 24 horas.'), 'ok');
         } else {
           // Token guardado de um perfil que nao existe mais no servidor: descarta e pede o convite.
@@ -270,6 +320,38 @@ $('send').addEventListener('click', function () {
       })
       .catch(function () { say(T('Sem conexão com o servidor.'), 'err'); })
       .then(function () { sending = false; update(); });
+  });
+});
+
+// Leitura pela API: um clique; a aba ativa (pagina do perfil) faz as requisicoes.
+var API_ERRORS = {
+  pagina: 'Abra uma página do seu perfil no site do jogo (e entre na conta) e tente de novo.',
+  gamertag: 'Não consegui identificar sua gamertag. Abra a Visão geral do perfil e tente de novo.',
+  sessao: 'Entre na sua conta no site do jogo e tente de novo.',
+  limite: 'O site pediu para esperar. Tente de novo em alguns minutos.',
+  rede: 'Sem conexão com o site do jogo.',
+  formato: 'O site do jogo mudou o formato. Use a leitura das páginas.',
+};
+var API_COOLDOWN = 5 * 60 * 1000;
+$('api').addEventListener('click', function () {
+  chrome.storage.local.get('apiAt', function (res) {
+    var wait = (res.apiAt || 0) + API_COOLDOWN - Date.now();
+    if (wait > 0) { say(T('Espere ainda alguns minutos antes de ler de novo.'), 'err'); return; }
+    $('api').disabled = true;
+    say('');
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+      var tab = tabs && tabs[0];
+      var fail = function (k) { say(T(API_ERRORS[k]), 'err'); $('api').disabled = false; };
+      if (!tab || !/^https:\/\/www\.seaofthieves\.com\/[^/]+\/profile\//.test(tab.url || '')) { fail('pagina'); return; }
+      chrome.tabs.sendMessage(tab.id, { type: 'pb-read-api' }, function (r) {
+        if (chrome.runtime.lastError || !r) { fail('pagina'); return; }
+        if (r.error) { fail(r.error); return; }
+        chrome.storage.local.set({ apiAt: Date.now() });
+        if (r.missing && r.missing.length) say(T('Leitura concluída, mas faltaram partes. Abra as páginas correspondentes ou tente de novo mais tarde.'), 'err');
+        else say('');
+        $('api').disabled = false;
+      });
+    });
   });
 });
 
