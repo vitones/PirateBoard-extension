@@ -272,6 +272,15 @@
     return out;
   }
 
+  // Identificador opaco e estavel do nome (FNV-1a, 8 hex): permite comparar condecoracoes sem enviar o texto.
+  function nameId(s) {
+    var h = 0x811c9dc5;
+    s = String(s).replace(/\s+/g, ' ').trim().toLowerCase();
+    for (var i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 0x01000193) >>> 0; }
+    return ('00000000' + h.toString(16)).slice(-8);
+  }
+  var ROMAN = { I: 1, II: 2, III: 3, IV: 4, V: 5, VI: 6, VII: 7, VIII: 8, IX: 9, X: 10 };
+
   function parseCommendations(text) {
     var l = lines(text);
     var start = -1;
@@ -279,17 +288,24 @@
       if (l[i] === 'Tudo' && /^Completo/.test(l[i + 1])) { start = i + 2; break; }
     }
     if (start < 0) return null;
-    var done = 0, total = 0, progress = 0, names = [];
+    var done = 0, total = 0, progress = 0, names = [], detail = [];
     for (var j = start; j < l.length && l[j] !== 'VOLTAR'; j++) {
       var m = /^(\d{1,7})\/(\d{1,7})$/.exec(l[j]);
       if (!m) continue;
       var a = Number(m[1]), b = Number(m[2]);
       if (b < 1) continue;
       total++;
+      // Contador e grau (o "Classe III - ..." da descricao, 0 se nao houver) de cada condecoracao, com id opaco do nome.
+      if (j > 0 && detail.length < 60) {
+        var desc = '';
+        for (var d = j + 1; d < Math.min(j + 4, l.length); d++) { if (l[d] && !/^\d{1,7}\/\d{1,7}$/.test(l[d])) { desc = l[d]; break; } }
+        var gm = /^Classe ([IVX]+)\b/.exec(desc);
+        detail.push({ h: nameId(l[j - 1]), v: a, t: b, g: gm && ROMAN[gm[1]] ? ROMAN[gm[1]] : 0 });
+      }
       if (a >= b) { done++; var nm = j > 0 ? cleanName(l[j - 1]) : null; if (nm && names.length < 200 && names.indexOf(nm) === -1) names.push(nm); }
       progress += Math.min(a, b) / b;
     }
-    return total > 0 && total <= 500 ? { done: done, total: total, progress: Math.round(progress * 10) / 10, names: names } : null;
+    return total > 0 && total <= 500 ? { done: done, total: total, progress: Math.round(progress * 10) / 10, names: names, detail: detail } : null;
   }
 
   // opts (opt-in do jogador): { commendationNames: bool, chestNames: bool }
@@ -318,6 +334,7 @@
       Object.keys(parts.commendations).forEach(function (k) {
         var c = parts.commendations[k];
         extras.commendations[k] = { done: c.done, total: c.total, progress: c.progress };
+        if (c.detail && c.detail.length) (extras.commendationDetail = extras.commendationDetail || {})[k] = c.detail;
         if (opts.commendationNames && c.names && c.names.length) cnames[k] = c.names;
       });
       if (Object.keys(cnames).length) extras.commendationNames = cnames;
@@ -340,6 +357,7 @@
     addChestPage: addChestPage,
     chestCounts: chestCounts,
     cleanName: cleanName,
+    nameId: nameId,
     mergeNames: mergeNames,
     chestTotal: chestTotal,
     CHEST_KEYS: CHEST_CATEGORIES.map(function (c) { return c[0]; }),

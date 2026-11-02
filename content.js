@@ -47,7 +47,11 @@
       if (kind === 'reputation') parts.reputation = value;
       if (kind === 'milestones') parts.milestones = value;
       if (kind === 'creator') parts.creator = value;
-      if (kind === 'faction') (parts.factions = parts.factions || {})[FACTION_PATHS[lastSegment(location.pathname)]] = value;
+      if (kind === 'faction') {
+        var fk = FACTION_PATHS[lastSegment(location.pathname)];
+        (parts.factions = parts.factions || {})[fk] = value.header;
+        if (value.commendations) (parts.commendations = parts.commendations || {})[fk] = value.commendations; // condecoracoes da propria faccao
+      }
       if (kind === 'company') (parts.commendations = parts.commendations || {})[companyOf(location.pathname)] = value;
       if (kind === 'seasons') parts.seasons = { renown: value };
       parts.readAt = Date.now();
@@ -88,7 +92,10 @@
       else if (kind === 'seasons') value = PBParse.parseRenown(textOf('.profiles-seasons-track__renown-meter__level-text'));
       else if (kind === 'captaincy') value = PBParse.parseCaptaincy(text);
       else if (kind === 'milestones') value = PBParse.parseMilestones(text);
-      else if (kind === 'faction') value = PBParse.parseFaction(text);
+      else if (kind === 'faction') {
+        var fh = PBParse.parseFaction(text);
+        value = fh ? { header: fh, commendations: PBParse.parseCommendations(text) } : null; // so 'header' vai em factions
+      }
       else if (kind === 'creator') value = PBParse.parseCreator(text);
       else if (kind === 'company') value = PBParse.parseCommendations(text);
       else if (kind === 'reputation') {
