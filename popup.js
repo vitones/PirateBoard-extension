@@ -36,8 +36,12 @@ function row(dl, label, value) {
   dl.appendChild(dt); dl.appendChild(dd);
 }
 
+var lastParts = null;
+function opts() { return { commendationNames: $('opt-comm').checked, chestNames: $('opt-chest').checked }; }
+
 function render(parts) {
-  snapshot = PBParse.buildSnapshot(parts);
+  lastParts = parts;
+  snapshot = PBParse.buildSnapshot(parts, opts());
   gamertag = parts.header ? parts.header.gamertag : null;
   $('who').textContent = gamertag ? gamertag + (parts.header.title ? ' · ' + parts.header.title : '') : '';
   document.querySelectorAll('#steps li').forEach(function (li) {
@@ -270,3 +274,17 @@ $('send').addEventListener('click', function () {
 });
 
 refresh();
+
+// Opt-in dos textos: lembra a escolha e refaz a previa ao marcar ou desmarcar.
+(function () {
+  function save() { try { chrome.storage.local.set({ optin: opts() }); } catch (e) {} }
+  chrome.storage.local.get('optin', function (res) {
+    var o = res.optin || {};
+    $('opt-comm').checked = !!o.commendationNames;
+    $('opt-chest').checked = !!o.chestNames;
+    if (lastParts) render(lastParts);
+  });
+  ['opt-comm', 'opt-chest'].forEach(function (id) {
+    $(id).addEventListener('change', function () { save(); if (lastParts) render(lastParts); });
+  });
+})();

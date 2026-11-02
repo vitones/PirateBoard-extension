@@ -116,6 +116,7 @@
       isLast = !!next && next.hasAttribute('disabled');
     }
     var reading = { category: active(rows[0]), sub: active(rows[1]), page: page, isLast: isLast, count: items };
+    var names = [].map.call(document.querySelectorAll('.profile-grid__item-inner'), function (e) { return e.getAttribute('value'); }); // nomes ficam so no aparelho; so vao ao servidor com a sua autorizacao no popup
     var sig = [reading.category, reading.sub, page, isLast, items].join('|');
     if (sig === lastSig || !items) return;
     lastSig = sig;
@@ -123,8 +124,15 @@
     chrome.storage.local.get('parts', function (res) {
       var parts = res.parts || {};
       var next2 = PBParse.addChestPage(parts.chest, reading);
-      if (!next2) return;
-      parts.chest = next2;
+      var key = PBParse.chestCategory(reading.category);
+      var namesBefore = key && parts.chestNames && parts.chestNames[key] ? parts.chestNames[key].length : 0;
+      if (key && /^(Tudo|Todos|All)$/i.test(String(reading.sub || '').trim())) {
+        parts.chestNames = parts.chestNames || {};
+        parts.chestNames[key] = PBParse.mergeNames(parts.chestNames[key], names, 1000);
+      }
+      var namesAfter = key && parts.chestNames && parts.chestNames[key] ? parts.chestNames[key].length : 0;
+      if (!next2 && namesAfter === namesBefore) return;
+      if (next2) parts.chest = next2;
       parts.readAt = Date.now();
       chrome.storage.local.set({ parts: parts });
     });
