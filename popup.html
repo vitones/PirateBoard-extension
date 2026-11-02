@@ -7,10 +7,20 @@
 </head>
 <body>
   <header>
-    <h1>PirateBoard</h1>
-    <span id="who"></span>
+    <img src="icons/icon48.png" alt="" width="32" height="32">
+    <div class="brand"><h1>PirateBoard</h1><span id="who"></span></div>
   </header>
 
+  <button id="api" class="primary">Sincronizar pelo site do jogo</button>
+  <p class="muted" id="api-help">Lê só o seu perfil, com um clique. Abra antes uma página do seu perfil no site do jogo.</p>
+  <section id="sync" hidden aria-live="polite">
+    <div class="bar" role="progressbar" aria-label="Progresso da sincronização" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="bar-fill"></div></div>
+    <p id="sync-summary" class="muted"></p>
+    <ul id="sync-list" class="sync"></ul>
+  </section>
+
+  <details id="manual">
+  <summary>Leitura manual pelas páginas</summary>
   <ul id="steps" class="steps">
     <li data-key="header"><a data-url="https://www.seaofthieves.com/pt-br/profile/overview" href="#">Visão geral</a></li>
     <li data-key="captaincy"><a data-url="https://www.seaofthieves.com/pt-br/profile/captaincy" href="#">Capitania</a></li>
@@ -23,14 +33,15 @@
     <li data-key="chest"><a data-url="https://www.seaofthieves.com/pt-br/profile/your-chest" href="#">Baú</a></li>
   </ul>
   <p id="hint" class="muted">Abra cada página do seu perfil no site do jogo e espere carregar. Toque em uma para abrir.</p>
+  </details>
 
   <main id="review" hidden>
     <div id="stats" class="stats"></div>
-    <details>
+    <details class="det-api">
       <summary id="companies-label"></summary>
       <dl id="companies" class="list"></dl>
     </details>
-    <details>
+    <details class="det-api">
       <summary id="chest-label"></summary>
       <dl id="chest-list" class="list"></dl>
     </details>
@@ -45,6 +56,7 @@
     <label><input type="checkbox" id="opt-comm"> Enviar também os nomes das condecorações completas</label>
     <label><input type="checkbox" id="opt-chest"> Enviar também os nomes dos itens do Baú que você abriu</label>
     <label><input type="checkbox" id="terms"> Aceito os termos e a política de privacidade</label>
+    <p class="muted legal"><a href="#" data-url="https://pirateboard.veetones.workers.dev/termos">Ler os termos</a> · <a href="#" data-url="https://pirateboard.veetones.workers.dev/privacidade">Política de privacidade</a></p>
     <button id="send" disabled>Enviar</button>
   </main>
 
@@ -57,6 +69,7 @@
   <p id="status" role="status"></p>
   <footer>
     <button id="clear" class="link">Limpar leitura</button>
+    <a id="changelog" class="link" href="#" data-url="https://pirateboard.veetones.workers.dev/novidades">Novidades</a>
     <span>Não afiliado à Rare nem à Microsoft. Nenhum cookie ou senha é lido.</span>
   </footer>
   <script src="i18n.js"></script>

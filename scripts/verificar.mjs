@@ -10,7 +10,7 @@ const manifest = JSON.parse(readFileSync('manifest.json', 'utf8'));
 
 if (manifest.manifest_version !== 3) falha('manifest_version deve ser 3');
 if (!/^\d+\.\d+\.\d+$/.test(manifest.version)) falha('version deve ser x.y.z');
-if (JSON.stringify(manifest.permissions) !== '["storage"]') falha('permissions deve ser so ["storage"]');
+if (JSON.stringify(manifest.permissions) !== '["storage","activeTab"]') falha('permissions deve ser so ["storage","activeTab"]');
 for (const h of manifest.host_permissions ?? []) {
   if (!/^https:\/\/pirateboard\.veetones\.workers\.dev\/\*$/.test(h)) falha('host_permissions inesperado: ' + h);
 }

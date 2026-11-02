@@ -1,20 +1,24 @@
 {
   "manifest_version": 3,
   "name": "PirateBoard",
-  "version": "0.2.0",
+  "version": "0.4.0",
   "description": "Le os numeros do seu perfil de Sea of Thieves, mostra o que sera enviado e so envia se voce confirmar. Nao e afiliado a Rare nem a Microsoft.",
-  "permissions": ["storage"],
+  "permissions": ["storage", "activeTab"],
   "host_permissions": [
     "https://pirateboard.veetones.workers.dev/*"
   ],
   "content_scripts": [
     {
       "matches": ["https://www.seaofthieves.com/*/profile/*"],
-      "js": ["parse.js", "content.js"],
+      "js": ["parse.js", "api.js", "content.js"],
       "run_at": "document_idle"
     }
   ],
-  "action": { "default_popup": "popup.html" },
+  "icons": { "16": "icons/icon16.png", "48": "icons/icon48.png", "128": "icons/icon128.png" },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": { "16": "icons/icon16.png", "48": "icons/icon48.png", "128": "icons/icon128.png" }
+  },
   "content_security_policy": {
     "extension_pages": "script-src 'self'; object-src 'self'"
   }

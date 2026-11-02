@@ -1,6 +1,6 @@
 // Roda so nas paginas do perfil que o proprio jogador abriu. Le o texto visivel
 // e o valor exato das moedas (atributo title),
-// guarda so numeros localmente e nao faz nenhuma requisicao de rede.
+// guarda so numeros localmente. So faz requisicoes se o jogador clicar no botao da API (ver readApi).
 // O site do jogo troca de aba sem recarregar a pagina; por isso o endereco e
 // observado e a leitura recomeca a cada mudanca.
 (function () {
@@ -47,7 +47,11 @@
       if (kind === 'reputation') parts.reputation = value;
       if (kind === 'milestones') parts.milestones = value;
       if (kind === 'creator') parts.creator = value;
-      if (kind === 'faction') (parts.factions = parts.factions || {})[FACTION_PATHS[lastSegment(location.pathname)]] = value;
+      if (kind === 'faction') {
+        var fk = FACTION_PATHS[lastSegment(location.pathname)];
+        (parts.factions = parts.factions || {})[fk] = value.header;
+        if (value.commendations) (parts.commendations = parts.commendations || {})[fk] = value.commendations; // condecoracoes da propria faccao
+      }
       if (kind === 'company') (parts.commendations = parts.commendations || {})[companyOf(location.pathname)] = value;
       if (kind === 'seasons') parts.seasons = { renown: value };
       parts.readAt = Date.now();
@@ -88,7 +92,10 @@
       else if (kind === 'seasons') value = PBParse.parseRenown(textOf('.profiles-seasons-track__renown-meter__level-text'));
       else if (kind === 'captaincy') value = PBParse.parseCaptaincy(text);
       else if (kind === 'milestones') value = PBParse.parseMilestones(text);
-      else if (kind === 'faction') value = PBParse.parseFaction(text);
+      else if (kind === 'faction') {
+        var fh = PBParse.parseFaction(text);
+        value = fh ? { header: fh, commendations: PBParse.parseCommendations(text) } : null; // so 'header' vai em factions
+      }
       else if (kind === 'creator') value = PBParse.parseCreator(text);
       else if (kind === 'company') value = PBParse.parseCommendations(text);
       else if (kind === 'reputation') {
@@ -146,6 +153,36 @@
     var kind = kindOf(key);
     if (kind) read(kind, 0);
   }
+
+  // Leitura pela API do site: so quando o jogador clica no botao do popup (mensagem 'pb-read-api').
+  // Roda na propria pagina do jogo, com a sessao dele, e guarda o resultado igual ao leitor de texto.
+  function readApi(done) {
+    var header = PBParse.parseHeader(document.body ? document.body.innerText : '');
+    chrome.storage.local.get('parts', function (res) {
+      var parts = res.parts || {};
+      var gamertag = header ? header.gamertag : (parts.header ? parts.header.gamertag : null);
+      if (!gamertag) { done({ error: 'gamertag' }); return; }
+      // Progresso para o popup (storage, assim ele acompanha mesmo se for reaberto): estado por endpoint.
+      var items = {};
+      PBApi.ENDPOINTS.forEach(function (k) { items[k] = 'espera'; });
+      function progress(state, err) { chrome.storage.local.set({ apiProgress: { state: state, items: items, error: err || null } }); }
+      progress('lendo');
+      PBApi.readAll(fetch.bind(window), { onStep: function (k, s) { items[k] = s; progress('lendo'); } }).then(function (r) {
+        if (r.error) { progress('fim', r.error); done({ error: r.error }); return; }
+        var m = PBApi.mapApi(r.data, gamertag);
+        if (!m.parts) { progress('fim', 'formato'); done({ error: 'formato' }); return; }
+        if (parts.header && parts.header.gamertag !== gamertag) parts = {};
+        Object.keys(m.parts).forEach(function (k) { parts[k] = m.parts[k]; });
+        chrome.storage.local.set({ parts: parts }, function () { progress('fim'); done({ ok: true, missing: m.missing.concat(r.failed || []) }); });
+      });
+    });
+  }
+  chrome.runtime.onMessage.addListener(function (msg, sender, respond) {
+    if (!msg || msg.type !== 'pb-read-api' || !chrome.runtime.id) return false;
+    if (typeof PBApi === 'undefined' || !/\/profile\//.test(location.pathname)) { respond({ error: 'pagina' }); return false; }
+    readApi(respond);
+    return true;
+  });
 
   // Depois que a extensao e recarregada, este script antigo fica orfao na pagina:
   // chrome.runtime.id some e qualquer chamada a chrome.storage lanca erro. Para de vez.
