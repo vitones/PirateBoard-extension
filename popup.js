@@ -208,6 +208,33 @@ $('delete').addEventListener('click', function () {
   });
 });
 
+$('renew').addEventListener('click', function () {
+  if (!confirm(T('Renovar a chave de edição? A chave antiga deixa de valer neste e em qualquer outro navegador.'))) return;
+  $('renew').disabled = true;
+  chrome.storage.local.get('tokens', function (res) {
+    var tokens = res.tokens || {};
+    fetch(API + '/api/token/renew', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ gamertag: gamertag, token: tokens[gamertag] }),
+      credentials: 'omit',
+    })
+      .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
+      .then(function (x) {
+        if (x.ok && typeof x.j.token === 'string' && x.j.token) {
+          tokens[gamertag] = x.j.token;
+          chrome.storage.local.set({ tokens: tokens }, function () { say(T('Chave renovada. A antiga não vale mais.'), 'ok'); syncToken(); });
+        } else if (x.j && x.j.error === 'muitas requisicoes') {
+          say(MESSAGES['muitas requisicoes'], 'err');
+        } else {
+          say(T('Não foi possível renovar. Tente de novo.'), 'err');
+        }
+      })
+      .catch(function () { say(T('Sem conexão com o servidor.'), 'err'); })
+      .then(function () { $('renew').disabled = false; });
+  });
+});
+
 function days(ms) { return Math.max(1, Math.ceil(ms / 86400000)); }
 
 $('mkinvite').addEventListener('click', function () {
