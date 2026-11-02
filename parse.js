@@ -256,6 +256,22 @@
 
   // Condecoracoes de uma companhia: depois do filtro "Tudo", cada item tem "atual/meta".
   // Guarda so quantas estao completas, quantas existem e o progresso somado (cada item vale ate 1).
+  // Nome curto do jogo (condecoracao ou item): so letras, numeros e pontuacao comum.
+  var NAME_RE = /^[\p{L}\p{N} .,'’:;!?&()\-–—+/]+$/u;
+  function cleanName(s) {
+    s = String(s == null ? '' : s).replace(/\s+/g, ' ').trim();
+    return s.length >= 1 && s.length <= 60 && NAME_RE.test(s) ? s : null;
+  }
+  // Junta nomes novos a uma lista, sem repetir, ate o limite.
+  function mergeNames(list, names, max) {
+    var out = (list || []).slice();
+    for (var i = 0; i < names.length; i++) {
+      var n = cleanName(names[i]);
+      if (n && out.indexOf(n) === -1 && out.length < max) out.push(n);
+    }
+    return out;
+  }
+
   function parseCommendations(text) {
     var l = lines(text);
     var start = -1;
@@ -263,20 +279,22 @@
       if (l[i] === 'Tudo' && /^Completo/.test(l[i + 1])) { start = i + 2; break; }
     }
     if (start < 0) return null;
-    var done = 0, total = 0, progress = 0;
+    var done = 0, total = 0, progress = 0, names = [];
     for (var j = start; j < l.length && l[j] !== 'VOLTAR'; j++) {
       var m = /^(\d{1,7})\/(\d{1,7})$/.exec(l[j]);
       if (!m) continue;
       var a = Number(m[1]), b = Number(m[2]);
       if (b < 1) continue;
       total++;
-      if (a >= b) done++;
+      if (a >= b) { done++; var nm = j > 0 ? cleanName(l[j - 1]) : null; if (nm && names.length < 200 && names.indexOf(nm) === -1) names.push(nm); }
       progress += Math.min(a, b) / b;
     }
-    return total > 0 && total <= 500 ? { done: done, total: total, progress: Math.round(progress * 10) / 10 } : null;
+    return total > 0 && total <= 500 ? { done: done, total: total, progress: Math.round(progress * 10) / 10, names: names } : null;
   }
 
-  function buildSnapshot(parts) {
+  // opts (opt-in do jogador): { commendationNames: bool, chestNames: bool }
+  function buildSnapshot(parts, opts) {
+    opts = opts || {};
     if (!parts || !parts.header || !parts.captaincy || !parts.reputation || !parts.reputation.length) return null;
     var snap = {
       version: 1,
@@ -294,7 +312,17 @@
     if (parts.milestones) extras.milestones = parts.milestones;
     if (parts.factions && Object.keys(parts.factions).length) extras.factions = parts.factions;
     if (parts.creator) extras.creator = parts.creator;
-    if (parts.commendations && Object.keys(parts.commendations).length) extras.commendations = parts.commendations;
+    if (parts.commendations && Object.keys(parts.commendations).length) {
+      extras.commendations = {};
+      var cnames = {};
+      Object.keys(parts.commendations).forEach(function (k) {
+        var c = parts.commendations[k];
+        extras.commendations[k] = { done: c.done, total: c.total, progress: c.progress };
+        if (opts.commendationNames && c.names && c.names.length) cnames[k] = c.names;
+      });
+      if (Object.keys(cnames).length) extras.commendationNames = cnames;
+    }
+    if (opts.chestNames && parts.chestNames && Object.keys(parts.chestNames).length) extras.chestItems = parts.chestNames;
     if (Object.keys(extras).length) snap.extras = extras;
     return snap;
   }
@@ -311,6 +339,8 @@
     chestCategory: chestCategory,
     addChestPage: addChestPage,
     chestCounts: chestCounts,
+    cleanName: cleanName,
+    mergeNames: mergeNames,
     chestTotal: chestTotal,
     CHEST_KEYS: CHEST_CATEGORIES.map(function (c) { return c[0]; }),
     parseCaptaincy: parseCaptaincy,
