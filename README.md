@@ -9,6 +9,7 @@ Este repositório existe para que qualquer pessoa possa conferir, linha por linh
 1. Quando você abre as páginas **Visão geral**, **Capitania**, **Reputação** e, se quiser, **Temporadas** e **Baú** do seu perfil em `seaofthieves.com`, ela lê o **texto que aparece na tela** e o valor exato das moedas (gamertag, Moedas Antigas, ouro, metas, título, Renome, nível de reputação nas companhias e a quantidade de itens do Baú por categoria).
 2. No painel (ícone da extensão) ela mostra **exatamente o que será enviado**, inclusive o JSON bruto.
 3. **Só envia quando você aceita os termos e clica em Enviar.** Nada é enviado sozinho.
+4. Opcional: o botão **Verificar conta Xbox** abre, em outra aba, o login da Microsoft no site do PirateBoard. A extensão não recebe nem guarda dados da conta; só abre endereços do próprio PirateBoard.
 
 ## O que ela não faz
 

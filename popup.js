@@ -235,6 +235,45 @@ $('renew').addEventListener('click', function () {
   });
 });
 
+function msCall(path, done) {
+  chrome.storage.local.get('tokens', function (res) {
+    fetch(API + path, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ gamertag: gamertag, token: (res.tokens || {})[gamertag] }),
+      credentials: 'omit',
+    })
+      .then(function (r) { return r.json().then(function (j) { return { status: r.status, ok: r.ok, j: j || {} }; }); })
+      .then(done)
+      .catch(function () { say(T('Sem conexão com o servidor.'), 'err'); });
+  });
+}
+
+$('xbox').addEventListener('click', function () {
+  $('xbox').disabled = true;
+  msCall('/api/microsoft/iniciar', function (x) {
+    $('xbox').disabled = false;
+    if (x.status === 503) { say(T('A verificação da conta Xbox ainda não está disponível.'), 'err'); return; }
+    if (x.ok && x.j.already) { say(T('Sua conta Xbox já está verificada.'), 'ok'); return; }
+    // Só abre o endereço que o próprio PirateBoard devolveu para este fluxo.
+    if (x.ok && typeof x.j.url === 'string' && x.j.url.indexOf(API + '/api/microsoft/ir?f=') === 0) {
+      chrome.tabs.create({ url: x.j.url });
+      say(T('Abrimos a página da Microsoft em outra aba. Entre com a conta Xbox e volte aqui.'), 'ok');
+    } else if (x.j.error === 'muitas requisicoes') {
+      say(MESSAGES['muitas requisicoes'], 'err');
+    } else {
+      say(T('Não foi possível concluir. Tente de novo.'), 'err');
+    }
+  });
+});
+
+$('xbox-off').addEventListener('click', function () {
+  if (!confirm(T('Remover a verificação da conta Xbox deste perfil?'))) return;
+  msCall('/api/microsoft/desvincular', function (x) {
+    say(x.ok ? T('Verificação removida.') : T('Não foi possível concluir. Tente de novo.'), x.ok ? 'ok' : 'err');
+  });
+});
+
 function days(ms) { return Math.max(1, Math.ceil(ms / 86400000)); }
 
 $('mkinvite').addEventListener('click', function () {
