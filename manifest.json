@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "PirateBoard",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "Le os numeros do seu perfil de Sea of Thieves, mostra o que sera enviado e so envia se voce confirmar. Nao e afiliado a Rare nem a Microsoft.",
   "permissions": ["storage", "activeTab"],
   "host_permissions": [
