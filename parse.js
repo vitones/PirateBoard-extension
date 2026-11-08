@@ -257,7 +257,7 @@
   // Condecoracoes de uma companhia: depois do filtro "Tudo", cada item tem "atual/meta".
   // Guarda so quantas estao completas, quantas existem e o progresso somado (cada item vale ate 1).
   // Nome curto do jogo (condecoracao ou item): so letras, numeros e pontuacao comum.
-  var NAME_RE = /^[\p{L}\p{N} .,'’:;!?&()\-–—+/]+$/u;
+  var NAME_RE = /^[\p{L}\p{N} .,'’‘“”:;!?&()\-–—+/]+$/u;
   function cleanName(s) {
     s = String(s == null ? '' : s).replace(/\s+/g, ' ').trim();
     return s.length >= 1 && s.length <= 60 && NAME_RE.test(s) ? s : null;
@@ -339,7 +339,11 @@
       });
       if (Object.keys(cnames).length) extras.commendationNames = cnames;
     }
-    if (opts.chestNames && parts.chestNames && Object.keys(parts.chestNames).length) extras.chestItems = parts.chestNames;
+    if (opts.chestNames && parts.chestNames && Object.keys(parts.chestNames).length) {
+      extras.chestItems = parts.chestNames;
+      if (parts.chestTitles && parts.chestTitles.length) extras.chestTitles = parts.chestTitles;
+      if (parts.chestComplete === true) extras.chestComplete = true; // lista inteira lida pela API: habilita o "Nao tem"
+    }
     if (Object.keys(extras).length) snap.extras = extras;
     return snap;
   }

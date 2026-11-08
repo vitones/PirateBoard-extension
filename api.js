@@ -171,10 +171,48 @@
 
     var chest = chestOf(data.chest);
     if (chest) parts.chest = chest; else missing.push('chest');
+    var cn = chest ? chestNamesOf(data.chest) : null;
+    if (cn) {
+      if (Object.keys(cn.items).length) parts.chestNames = cn.items;
+      if (cn.titles.length) parts.chestTitles = cn.titles;
+      if (cn.complete) parts.chestComplete = true;
+    }
 
     parts.src = 'api';
     parts.readAt = Date.now();
     return { parts: parts, missing: missing };
+  }
+
+  // Primeiro tipo (etiqueta) do item, independente do idioma: 'Title' marca os titulos de reputacao.
+  function tagOf(item) {
+    var t = item && item.Taxonomy && item.Taxonomy.Tags;
+    var first = Array.isArray(t) ? t[0] : null;
+    return first && typeof first['#Name'] === 'string' ? first['#Name'] : null;
+  }
+
+  // Nomes dos itens do Bau (so o texto em ingles do endpoint sem prefixo de idioma) e dos titulos de reputacao.
+  // `complete` so e true quando as 8 categorias vieram inteiras: nenhum nome recusado, nenhuma categoria acima do teto.
+  // So entram no envio se o jogador marcar a opcao (buildSnapshot); aqui ficam so no aparelho.
+  var NAME_MAX = 1000;
+  function chestNamesOf(chest) {
+    var data = chest && chest.chestData;
+    if (!isObj(data)) return null;
+    var items = {}, titles = [], complete = true;
+    Object.keys(CHEST).forEach(function (api) {
+      var list = data[api];
+      if (!Array.isArray(list) || list.length > 5000) { complete = false; return; }
+      var names = [];
+      list.forEach(function (it) {
+        var n = it && typeof it === 'object' ? P().cleanName(it.title) : null;
+        if (n === null) { complete = false; return; }
+        if (tagOf(it) === 'Title') { if (titles.indexOf(n) === -1) titles.push(n); }
+        else if (names.indexOf(n) === -1) names.push(n);
+      });
+      if (names.length > NAME_MAX) { names = names.slice(0, NAME_MAX); complete = false; }
+      if (names.length) items[CHEST[api]] = names;
+    });
+    if (titles.length > NAME_MAX) { titles = titles.slice(0, NAME_MAX); complete = false; }
+    return { items: items, titles: titles, complete: complete };
   }
 
   // Teto de tamanho da resposta (T-API-2): recusa antes de interpretar; o endpoint vira 'formato'.
