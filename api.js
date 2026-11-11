@@ -7,7 +7,7 @@
   function P() { return root.PBParse; }
 
   var BASE = 'https://www.seaofthieves.com/api/profilev2/';
-  var ENDPOINTS = ['balance', 'reputation', 'captaincy', 'chest'];
+  var ENDPOINTS = ['balance', 'reputation', 'captaincy', 'chest', 'achievements'];
 
   var COMPANIES = {
     GoldHoarders: 'gold_hoarders', MerchantAlliance: 'merchant_alliance', OrderOfSouls: 'order_of_souls',
@@ -178,9 +178,29 @@
       if (cn.complete) parts.chestComplete = true;
     }
 
+    var ach = achievementsOf(data.achievements);
+    if (ach) parts.achievements = ach;
+
     parts.src = 'api';
     parts.readAt = Date.now();
     return { parts: parts, missing: missing };
+  }
+
+  // Conquistas concluidas: so o numero fixo (Sort) de cada uma com TimeUnlocked > 0 e o total. Numero, nao nome: nao depende
+  // de idioma nem de pontuacao. Nunca guarda a data, os pontos nem a descricao. So entra no envio com a opcao do jogador.
+  function achievementsOf(a) {
+    var list = isObj(a) && Array.isArray(a.sorted) ? a.sorted : null;
+    if (!list || list.length === 0 || list.length > 1000) return null;
+    var ids = [];
+    for (var i = 0; i < list.length; i++) {
+      var x = list[i] && list[i].achievement;
+      if (!isObj(x)) return null;
+      if (typeof x.TimeUnlocked === 'number' && x.TimeUnlocked > 0) {
+        var n = num(x.Sort, 100000);
+        if (n !== null && n > 0 && ids.indexOf(n) === -1) ids.push(n);
+      }
+    }
+    return { ids: ids, total: list.length };
   }
 
   // Primeiro tipo (etiqueta) do item, independente do idioma: 'Title' marca os titulos de reputacao.

@@ -38,7 +38,7 @@ function row(dl, label, value) {
 }
 
 var lastParts = null;
-function opts() { return { commendationNames: $('opt-comm').checked, chestNames: $('opt-chest').checked }; }
+function opts() { return { commendationNames: $('opt-comm').checked, chestNames: $('opt-chest').checked, achievements: $('opt-ach').checked }; }
 
 function render(parts) {
   lastParts = parts;
@@ -430,9 +430,10 @@ refresh();
     var o = res.optin || {};
     $('opt-comm').checked = !!o.commendationNames;
     $('opt-chest').checked = !!o.chestNames;
+    $('opt-ach').checked = !!o.achievements;
     if (lastParts) render(lastParts);
   });
-  ['opt-comm', 'opt-chest'].forEach(function (id) {
+  ['opt-comm', 'opt-chest', 'opt-ach'].forEach(function (id) {
     $(id).addEventListener('change', function () { save(); if (lastParts) render(lastParts); });
   });
 })();

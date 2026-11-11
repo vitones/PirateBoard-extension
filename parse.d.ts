@@ -16,4 +16,4 @@ export function cleanName(s: unknown): string | null;
 export function mergeNames(list: string[] | undefined, names: unknown[], max: number): string[];
 export function parseCaptaincy(text: string): { pirateGoals: number; shipGoals: number } | null;
 export function parseReputation(text: string): { company: string; level: number }[];
-export function buildSnapshot(parts: unknown, opts?: { commendationNames?: boolean; chestNames?: boolean }): { extras?: Record<string, any> } & Record<string, unknown> | null;
+export function buildSnapshot(parts: unknown, opts?: { commendationNames?: boolean; chestNames?: boolean; achievements?: boolean }): { extras?: Record<string, any> } & Record<string, unknown> | null;

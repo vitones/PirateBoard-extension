@@ -308,7 +308,7 @@
     return total > 0 && total <= 500 ? { done: done, total: total, progress: Math.round(progress * 10) / 10, names: names, detail: detail } : null;
   }
 
-  // opts (opt-in do jogador): { commendationNames: bool, chestNames: bool }
+  // opts (opt-in do jogador): { commendationNames: bool, chestNames: bool, achievements: bool }
   function buildSnapshot(parts, opts) {
     opts = opts || {};
     if (!parts || !parts.header || !parts.captaincy || !parts.reputation || !parts.reputation.length) return null;
@@ -343,6 +343,10 @@
       extras.chestItems = parts.chestNames;
       if (parts.chestTitles && parts.chestTitles.length) extras.chestTitles = parts.chestTitles;
       if (parts.chestComplete === true) extras.chestComplete = true; // lista inteira lida pela API: habilita o "Nao tem"
+    }
+    if (opts.achievements && parts.achievements && parts.achievements.total > 0) {
+      extras.achievements = parts.achievements.ids;
+      extras.achievementsTotal = parts.achievements.total;
     }
     if (Object.keys(extras).length) snap.extras = extras;
     return snap;
