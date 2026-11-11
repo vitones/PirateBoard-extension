@@ -29,7 +29,7 @@ Este repositório existe para que qualquer pessoa possa conferir, linha por linh
 | Site `pirateboard.veetones.workers.dev` | Enviar os números que você confirmou. |
 | `127.0.0.1:8799` | Só para desenvolvimento local; pode ser removida da sua cópia. |
 
-A **leitura opcional pela API** só acontece se você pedir: são 4 consultas GET a `www.seaofthieves.com/api/profilev2/` (saldo, reputação, capitania e baú), com a sua própria sessão do navegador, com pausa entre elas, e ela para na primeira recusa. Nada disso é enviado sem a sua confirmação.
+A **leitura opcional pela API** só acontece se você pedir: são 5 consultas GET a `www.seaofthieves.com/api/profilev2/` (saldo, reputação, capitania, baú e conquistas), com a sua própria sessão do navegador, com pausa entre elas, e ela para na primeira recusa. Nada disso é enviado sem a sua confirmação. Das conquistas, só se você marcar a caixa opcional (desmarcada por padrão), a extensão guarda e envia apenas os números das conquistas concluídas e o total: nunca nome, descrição, data ou progresso.
 
 Não há `cookies`, `tabs` amplo, `webRequest`, `history` nem `<all_urls>`.
 
